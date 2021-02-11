@@ -1,0 +1,93 @@
+html {
+    font-size: 10px;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+    display:flex;
+    min-height: 100vh;
+    align-items: center;
+    background-image: url("bg.png");
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    transition: 1s;
+}
+
+h1 {
+    width:calc(100% + 4rem);
+    margin: 0;
+    margin-left: -2rem;
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+    padding:.5rem;
+    background: #ffc600;
+    border-bottom: 5px solid #F3C010;
+    text-align: center;
+    font-size: 5rem;
+    font-weight: 100;
+    font-family: 'Pacifico', cursive;
+    text-shadow:3px 3px 0 #F3C010;
+
+}
+
+.voiceinator {
+    padding: 2rem;
+    width: 50rem;
+    margin: 0 auto 10rem;
+    border-radius: 0.5rem;
+    position: relative;
+    background: white;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 0 0 2px 2px rgba(0,0,0,0.1);
+}
+
+.voiceinator button,
+.voiceinator select,
+.voiceinator textarea {
+    width: 100%;
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    border: 0;
+    font-size: 2rem;
+    background: #F7F7F7;
+    outline: 0;
+}
+
+textarea {
+    height: 5rem;
+}
+
+.voiceinator button {
+    background:#ffc600;
+    border:0;
+    width: 100%;
+    float:left;
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-family: 'Pacifico', cursive;
+    border-bottom: 5px solid #F3C010;
+    cursor:pointer;
+    position: relative;
+}
+
+.voiceinator button:active {
+    top:2px;
+}
+
+p {
+    font-family: 'Pacifico', cursive;
+    font-size: 2.4rem;
+    line-height: 3.4rem;
+    text-align: center;
+}

@@ -1,0 +1,280 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: #313940;
+}
+body {
+  padding: 0;
+  padding-top: 80px;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #313940;
+  font-family: 'Open Sans Condensed';
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 244px;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 120px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.btn {
+  width: 120px;
+  height: 50px;
+  background-color: #0bdbac;
+  font-size: 18px;
+  color: #fff;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  filter: brightness(0.9);
+}
+
+.btn-active {
+  background-color: #ffaa00;
+}
+
+.piano {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 350px;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.piano-key {
+  position: relative;
+  width: 100px;
+  height: 340px;
+  background-color: rgba(255, 255, 255, 0.85);
+  border: 5px solid #313940;
+  border-radius: 0px 0px 12px 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.piano-key:hover {
+  background-color: #fff;
+}
+
+.keys-sharp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 70px;
+  right: 70px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+
+.piano-key.sharp {
+  width: 60px;
+  height: 210px;
+  background-color: #313940;
+  border: 0;
+  border-radius: 0px 0px 9px 9px;
+  top: 0;
+  z-index: 3;
+  pointer-events: auto;
+}
+
+.piano-key.piano-key-active,
+.piano-key.sharp.piano-key-active {
+  transform: scale(0.96);
+}
+
+.piano-key.none {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  pointer-events: none;
+}
+
+.piano-key::before {
+  content: attr(data-note);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  text-align: center;
+  color: #666;
+  bottom: -60px;
+  left: 30px;
+  transition: 0.3s;
+}
+
+.piano-key:hover::before {
+  color: #c0c0c0;
+}
+
+.piano-key.sharp::before {
+  bottom: 220px;
+  left: 10px;
+}
+
+.piano-key::after {
+  display: none;
+  content: attr(data-letter);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 32px;
+  text-align: center;
+  color: #666;
+  bottom: -60px;
+  left: 30px;
+  transition: 0.3s;
+}
+
+.piano-key:hover::after {
+  color: #c0c0c0;
+}
+
+.piano-key.sharp::after {
+  bottom: 220px;
+  left: 10px;
+}
+
+.piano-key.letter::before {
+  display: none;
+}
+
+.piano-key.letter::after {
+  display: block;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  outline: 0;
+  background-size: contain;
+  cursor: pointer;
+}
+
+.openfullscreen {
+  background-image: url('assets/svg/fullscreen-open.svg');
+}
+
+.exitfullscreen {
+  background-image: url('assets/svg/fullscreen-exit.svg');
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.github {
+  width: 260px;
+  height: 65px;
+  padding-left: 65px;
+  background-image: url('assets/svg/github-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 65px;
+  color: #c0c0c0;
+  font-size: 18px;
+  font-family: Arial;
+}
+
+.rss {
+  width: 120px;
+  height: 40px;
+  background-image: url('assets/svg/rss.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+  .piano {
+    width: 310px;
+  }
+  .piano-key {
+    width: 44px;
+    height: 200px;
+    border-radius: 0px 0px 8px 8px;
+    border: 2px solid #313940;
+  }
+  .keys-sharp {
+    left: 26px;
+    right: 26px;
+  }
+  .piano-key.sharp {
+    width: 35px;
+    height: 120px;
+    border-radius: 0px 0px 6px 6px;
+  }
+  .piano-key::before {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    bottom: -50px;
+    left: 5px;
+  }
+  .piano-key::after {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    bottom: -50px;
+    left: 5px;
+    transition: 0.3s;
+  }
+  .piano-key.sharp::before {
+    bottom: 140px;
+    left: 0px;
+  }
+  .piano-key.sharp::after {
+    bottom: 140px;
+    left: 0px;
+  }
+  .btn-container {
+    width: 244px;
+    height: 40px;
+    margin-bottom: 100px;
+  }
+  .btn {
+    width: 120px;
+    height: 40px;
+  }
+  .fullscreen {
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+  }
+}
