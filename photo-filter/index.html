@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="assets/favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>photo-filter</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="filters">        
+        <label>Размытие:
+          <input type="range" name="blur" min="0" max="10" value="0" data-sizing="px">
+          <output name="result">0</output>
+        </label>        
+        <label>Инверсия:
+          <input type="range" name="invert" min="0" max="100" value="0" data-sizing="%">
+          <output name="result">0</output>
+        </label>
+        <label>Сепия:
+          <input type="range" name="sepia" min="0" max="100" value="0" data-sizing="%">
+          <output name="result">0</output>
+        </label>
+        <label>Насыщенность:
+          <input type="range" name="saturate" min="0" max="200" value="100" data-sizing="%">
+          <output name="result">100</output>
+        </label>
+        <label>Оттенок:
+          <input type="range" name="hue" min="0" max="360" value="0" data-sizing="deg">
+          <output name="result">0</output>
+        </label>
+      </div>
+      <div class="editor">
+        <img src="assets/img/img.jpg" alt="image" width="100%">
+      </div>
+    </div>
+
+
+    <button class="fullscreen openfullscreen"></button>
+    <footer class="footer">
+      <div class="container">
+        <a href="#" class="github">github</a>
+        <a href="https://rs.school/js/" class="rss"></a>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>

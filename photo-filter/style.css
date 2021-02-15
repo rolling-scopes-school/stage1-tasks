@@ -1,0 +1,138 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  background-color: #313940;
+}
+body {
+  padding: 0;
+  padding-top: 80px;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #313940;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+label {
+  display: block;
+  position: relative;
+  margin-bottom: 60px;
+  margin-right: 140px;
+  color: #ddd;
+}
+
+input[type="range"] {
+  display: block;
+  appearance: none;
+  width: 400px;
+  height: 10px;
+  background-color: #6F757A;
+  margin-top: 20px;
+  outline: none;
+  border-radius: 0.25rem;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 32px;
+  height: 32px;
+  background-color: #313940;
+  border: 5px solid #6F757A;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+output {
+  position: absolute;
+  width: 60px;
+  height: 40px;
+  right: -80px;
+  top: 20px;
+  background-color: #313940;
+  border: 2px solid #6F757A;
+  text-align: left;
+  padding-left: 10px;
+  line-height: 40px;
+}
+
+:root {
+  --blur: 0px;
+  --invert: 0%;
+  --sepia: 0%;
+  --saturate: 100%;
+  --hue: 0deg;
+}
+
+img {  
+  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%)) sepia(var(--sepia, 0%))  saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
+}
+
+.fullscreen {
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  outline: 0;
+  background-size: contain;
+}
+
+.openfullscreen {
+  background-image: url('assets/svg/fullscreen-open.svg');
+}
+
+.exitfullscreen {
+  background-image: url('assets/svg/fullscreen-exit.svg');
+}
+
+.footer {
+  position: fixed;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  border-top: 1px solid #ddd;
+}
+
+.github {
+  width: 260px;
+  height: 65px;
+  padding-left: 65px;
+  background-image: url('assets/svg/github-icon.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 65px;
+  color: #c0c0c0;
+  font-size: 18px;
+  font-family: Arial;
+}
+
+.rss {
+  width: 120px;
+  height: 40px;
+  background-image: url('assets/svg/rss.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 720px) {
+
+  .fullscreen {
+    top: 20px;
+    right: 20px;
+    width: 30px;
+    height: 30px;
+  }
+}
