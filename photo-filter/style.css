@@ -65,6 +65,83 @@ output {
   line-height: 40px;
 }
 
+.btn-container {
+  position: fixed;
+  top: 40px;
+  right: 120px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.btn {
+  width: 120px;
+  background-color:rgba(255, 255, 255, 0.3);
+  font-size: 18px;
+  color:#313940;
+  outline: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
+
+.btn:active {
+  filter: brightness(0.9);
+}
+
+.btn-active {
+  background-color: #ffaa00;
+}
+
+.button-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 120px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button-wrapper span.label {
+  position: relative;
+  z-index: 0;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  padding-top: 10px;
+  background:rgba(255, 255, 255, 0.3);
+  cursor: pointer;
+  color: #313940;
+  font-size:18px;
+}
+
+.button-wrapper span.label:hover {
+  filter: brightness(1.1);
+}
+
+.button-wrapper span.label:active {
+  filter: brightness(0.9);
+}
+
+.btn-load {
+    display: inline-block;
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
 :root {
   --blur: 0px;
   --invert: 0%;
@@ -104,6 +181,12 @@ img {
   right: 0;
   border-top: 1px solid #ddd;
 }
+
+/* .github::after {
+  content: '2021';
+  padding-left: 30px;
+  text-decoration: none;
+} */
 
 .github {
   width: 260px;
