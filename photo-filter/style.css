@@ -88,11 +88,11 @@ output {
   cursor: pointer;
 }
 
-.btn:hover {
+.btn:hover, .button-wrapper .label:hover {
   filter: brightness(1.1);
 }
 
-.btn:active {
+.btn:active, .button-wrapper .label:active {
   filter: brightness(0.9);
 }
 
@@ -102,17 +102,14 @@ output {
 
 .button-wrapper {
   position: relative;
-  display: flex;
+  display: inline-block;
   align-items: center;
   width: 120px;
   text-align: center;
-  cursor: pointer;
 }
 
-.button-wrapper span.label {
-  position: relative;
-  z-index: 0;
-  display: inline-block;
+.button-wrapper .label {
+  display: block;
   width: 100%;
   height: 100%;
   padding-top: 10px;
@@ -122,24 +119,14 @@ output {
   font-size:18px;
 }
 
-.button-wrapper span.label:hover {
-  filter: brightness(1.1);
-}
-
-.button-wrapper span.label:active {
-  filter: brightness(0.9);
-}
-
 .btn-load {
-    display: inline-block;
-    position: absolute;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    opacity: 0;
-    cursor: pointer;
+    display: none;
+}
+
+.btn-save {
+  padding-top: 10px;
+  text-align: center;
+  text-decoration: none;
 }
 
 :root {
@@ -181,12 +168,6 @@ img {
   right: 0;
   border-top: 1px solid #ddd;
 }
-
-/* .github::after {
-  content: '2021';
-  padding-left: 30px;
-  text-decoration: none;
-} */
 
 .github {
   width: 260px;
