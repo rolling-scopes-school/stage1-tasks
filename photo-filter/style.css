@@ -8,6 +8,8 @@ body {
   min-height: 100vh;
   background-color: #313940;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  padding-bottom: 66px;
+  overflow-x: hidden;
 }
 
 a:focus {
@@ -30,7 +32,6 @@ label:hover {
 input[type="range"] {
   display: block;
   appearance: none;
-  width: 400px;
   height: 6px;
   background-color: #A2ABB3;
   margin-top: 22px;
@@ -38,6 +39,7 @@ input[type="range"] {
   border-radius: 0.25rem;
   transition: 0.3s;
   cursor: pointer;
+  width: 100%;
 }
 
 label:hover input[type="range"] {
@@ -116,17 +118,21 @@ label:active output {
 
 .btn-container {
   margin-bottom: 50px;
-  height: 50px;
   display: flex;
   justify-content: center;
 }
 
-.btn-container > *:not(:last-child) {
+.btn-container>* {
   margin-right: 10px;
+}
+
+.btn-container>*:last-child {
+  margin-right: 0;
 }
 
 .btn {
   min-width: 120px;
+  height: 50px;
   padding: 0 18px;
   background-color: transparent;
   border: 2px solid #00C9B7;
@@ -163,9 +169,8 @@ label:active output {
 .btn-load {
   position: relative;
   display: inline-flex;
-  height: 100%;
   align-items: center;
-  text-align: center;
+  justify-content: center;
   cursor: pointer;
 }
 
@@ -179,12 +184,22 @@ label:active output {
   cursor: pointer;
 }
 
+.filters {
+  width: 100%;
+  max-width: 40%;
+}
+
 :root {
   --blur: 0px;
   --invert: 0%;
   --sepia: 0%;
   --saturate: 100%;
   --hue: 0deg;
+}
+
+.editor {
+  width: 100%;
+  max-width: 60%;
 }
 
 img {
@@ -286,12 +301,68 @@ img {
   letter-spacing: 0;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 1024px) {
+  label:not(.btn) {
+    margin-bottom: 40px;
+    margin-right: 80px;
+  }
+
+  .header {
+    padding: 9px 0 8px;
+    margin-bottom: 40px;
+  }
+
+  .header-title {
+    font-size: 25px;
+  }
+
+  .btn {
+    min-width: 45%;
+    border-radius: 5px;
+  }
+
+  .btn-container {
+    padding: 0 15px;
+    flex-wrap: wrap;
+    margin-left: -10px;
+    margin-right: -10px;
+  }
+
+  .btn-container>*:last-child {
+    margin-right: 10px;
+  }
+
+  .btn-container>* {
+    margin: 10px;
+  }
+
+  .container {
+    flex-wrap: wrap;
+  }
+
+  .filters,
+  .editor {
+    max-width: 100%;
+  }
 
   .fullscreen {
-    top: 20px;
+    top: 11px;
     right: 20px;
     width: 30px;
     height: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .btn {
+    min-width: 145px;
+  }
+
+  .btn-container>*:last-child {
+    margin-right: 3px;
+  }
+
+  .btn-container>* {
+    margin: 3px;
   }
 }
