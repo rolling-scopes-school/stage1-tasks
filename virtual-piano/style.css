@@ -20,6 +20,7 @@ a:focus {
   padding: 19px 0 18px;
   margin-bottom: 50px;
   background: #545C64;
+  border-bottom: 1px solid #CBD5DE;
 }
 
 .header-title {
