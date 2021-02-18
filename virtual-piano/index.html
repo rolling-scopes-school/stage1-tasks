@@ -1,46 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="shortcut icon" href="assets/piano.ico" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>virtual-piano</title>
-  </head>
-  <body>
-    <div class="btn-container">
-      <button class="btn btn-notes btn-active">Notes</button>
-      <button class="btn btn-letters">Letters</button>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="assets/piano.ico" rel="shortcut icon">
+
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Open+Sans:wght@300;400;800&display=swap"
+    rel="stylesheet">
+  <link href="style.css" rel="stylesheet">
+
+  <title>virtual-piano</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header-title">Virtual Piano</h1>
+  </header>
+  <div class="btn-container">
+    <button class="btn btn-notes btn-active">Notes</button>
+    <button class="btn btn-letters">Letters</button>
+  </div>
+  <div class="piano">
+    <div class="piano-key" data-letter="D" data-note="c"></div>
+    <div class="piano-key" data-letter="F" data-note="d"></div>
+    <div class="piano-key" data-letter="G" data-note="e"></div>
+    <div class="piano-key" data-letter="H" data-note="f"></div>
+    <div class="piano-key" data-letter="J" data-note="g"></div>
+    <div class="piano-key" data-letter="K" data-note="a"></div>
+    <div class="piano-key" data-letter="L" data-note="b"></div>
+    <div class="keys-sharp">
+      <div class="piano-key sharp" data-letter="R" data-note="c♯"></div>
+      <div class="piano-key sharp" data-letter="T" data-note="d♯"></div>
+      <div class="piano-key sharp none"></div>
+      <div class="piano-key sharp" data-letter="U" data-note="f♯"></div>
+      <div class="piano-key sharp" data-letter="I" data-note="g♯"></div>
+      <div class="piano-key sharp" data-letter="O" data-note="a♯"></div>
     </div>
-    <div class="piano">
-      <div class="piano-key" data-note="c" data-letter="D"></div>
-      <div class="piano-key" data-note="d" data-letter="F"></div>
-      <div class="piano-key" data-note="e" data-letter="G"></div>
-      <div class="piano-key" data-note="f" data-letter="H"></div>
-      <div class="piano-key" data-note="g" data-letter="J"></div>
-      <div class="piano-key" data-note="a" data-letter="K"></div>
-      <div class="piano-key" data-note="b" data-letter="L"></div>
-      <div class="keys-sharp">
-        <div class="piano-key sharp" data-note="c♯" data-letter="R"></div>
-        <div class="piano-key sharp" data-note="d♯" data-letter="T"></div>
-        <div class="piano-key sharp none"></div>
-        <div class="piano-key sharp" data-note="f♯" data-letter="U"></div>
-        <div class="piano-key sharp" data-note="g♯" data-letter="I"></div>
-        <div class="piano-key sharp" data-note="a♯" data-letter="O"></div>
-      </div>
+  </div>
+  <button class="fullscreen openfullscreen"></button>
+  <audio></audio>
+  <footer class="footer">
+    <div class="footer-container">
+      <a class="github" href="#" target="_blank" rel="noopener noreferrer">github</a>
+      <a class="rss" href="https://rs.school/js/" target="_blank" rel="noopener noreferrer">
+        <span class="rss-year">'21</span>
+      </a>
     </div>
-    <button class="fullscreen openfullscreen"></button>
-    <audio></audio>
-    <footer class="footer">
-      <div class="footer-container">
-        <a href="#" class="github">github</a>
-        <a href="https://rs.school/js/" class="rss"></a>
-      </div>
-    </footer>
-  </body>
+  </footer>
+</body>
+
 </html>
