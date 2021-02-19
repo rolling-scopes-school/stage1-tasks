@@ -10,29 +10,121 @@
 
   <link href="https://fonts.gstatic.com" rel="preconnect">
   <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Open+Sans:wght@300;400;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap"
     rel="stylesheet">
-  <link href="style.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link type="text/css" href="assets/css/owfont-regular.css" rel="stylesheet">
 
   <title>relax-app</title>
 </head>
 
 <body>
   <main class="main">
-    <div class="theme"></div>
-
+    <!-- If you want, you can change the video file -->
+    <div class="slider">
+      <div class="slider-wrapper">
+        <div class="slider-slide">
+          <video class="video" playsinline autoplay muted loop>
+            <source src="assets/video/beach.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slider-slide">
+          <video class="video" playsinline autoplay muted loop>
+            <source src="assets/video/butterfly.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slider-slide">
+          <video class="video" playsinline autoplay muted loop>
+            <source src="assets/video/fall.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slider-slide">
+          <video class="video" playsinline autoplay muted loop>
+            <source src="assets/video/fire.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slider-slide">
+          <video class="video" playsinline autoplay muted loop>
+            <source src="assets/video/grass.mp4" type="video/mp4">
+          </video>
+        </div>
+        <div class="slider-slide">
+          <video class="video" playsinline autoplay muted loop>
+            <source src="assets/video/lake.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+  
+      <div class="slider-btn slider-btn--next"></div>
+      <div class="slider-btn slider-btn--prev"></div>
+    </div>
+  
     <div class="sidebar">
       <header class="header">
         <h1 class="header-title">RelaxApp</h1>
       </header>
-
+  
       <ul class="playlist">
-        <li class="playlist-item">
-          
+        <li class="playlist-item audio">
+          <button class="audio-toggle" title="Turn on/off sound">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+            </svg>
+          </button>
+          <div class="audio-inner">
+            <span class="audio-name">audio name</span>
+            <label class="audio-volume" title="Volume">
+              <input name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+            </label>
+          </div>
+        </li>
+  
+        <li class="playlist-item audio">
+          <button class="audio-toggle" title="Turn on/off sound">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+            </svg>
+          </button>
+          <div class="audio-inner">
+            <span class="audio-name">audio name</span>
+            <label class="audio-volume" title="Volume">
+              <input name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+            </label>
+          </div>
+        </li>
+  
+        <li class="playlist-item audio">
+          <button class="audio-toggle" title="Turn on/off sound">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+              <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+            </svg>
+          </button>
+          <div class="audio-inner">
+            <span class="audio-name">audio name</span>
+            <label class="audio-volume" title="Volume">
+              <input name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+            </label>
+          </div>
         </li>
       </ul>
+  
+      <div class="weather">
+        <div class="weather-city" contenteditable="true">
+          Minsk
+        </div>
+        <i class="weather-icon owf owf-800"></i>
+        <div class="weather-temperature">-13°C</div>
+        <div class="weather-description">clear</div>
+      </div>
+  
+      <div class="motivation">
+        <p class="motivation-text">
+          Your limitation—it’s only your imagination.
+        </p>
+      </div>
     </div>
   </main>
+
 </body>
 
 </html>
