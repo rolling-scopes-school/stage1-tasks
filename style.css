@@ -1,0 +1,18 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #313940;
+  font-family: 'Open Sans Condensed', Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+}
+
+a:focus,
+button:focus {
+  outline: 0;
+}
+/*# sourceMappingURL=style.css.map */
