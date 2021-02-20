@@ -110,7 +110,7 @@ output {
   height: 50px;
   padding: 0 18px;
   background-color: #454c53;
-  border: 2px solid #454c53;
+  border: 0;
   border-radius: 2px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -121,17 +121,16 @@ output {
   transition: 0.3s;
 }
 .btn:not(.btn-active):hover {
-  background-color: #00c9b7;
+  background-color: #515961; 
 }
 .btn:active {
   background-color: #00c9b7;
-  color: #313940;
 }
 .btn-active {
-  background-color: #00c9b7;
+  background-color: #00b4a4;
 }
 .btn-active:hover {
-  background-color: #00b4a4;
+  background-color: #00c9b7;
 }
 .btn-load {
   position: relative;
@@ -258,14 +257,13 @@ img {
   right: -5px;
   letter-spacing: 0;
 }
-
 @media (max-width: 1024px) {
+  .main {
+    padding-top: 40px;
+  }
   label:not(.btn) {
     margin-bottom: 35px;
     margin-right: 80px;
-  }
-  .header {
-    padding: 9px 0 8px;
   }
   .btn {
     min-width: 45%;
@@ -282,7 +280,7 @@ img {
   .btn-container > * {
     margin: 10px;
   }
-  .container {
+  .main {
     flex-wrap: wrap;
   }
   .filters,
@@ -296,7 +294,6 @@ img {
     height: 40px;
   }
 }
-
 @media (max-width: 375px) {
   .btn {
     min-width: 145px;
