@@ -7,16 +7,19 @@
 a:focus {
   outline: 0;
 }
+html {  
+  background: #313940;
+}
 body {
   min-height: 100vh;
   background-color: #313940;
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background: #313940;
   overflow-x: hidden;
 }
 .header {
   text-align: center;
   width: 100%;
-  background: #313940;
   border-bottom: 1px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
@@ -50,7 +53,7 @@ body {
   height: 50px;
   padding: 0 18px;
   background-color: #454c53;
-  border: 2px solid #454c53;
+  border: 0;
   border-radius: 2px;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
@@ -61,19 +64,16 @@ body {
   transition: 0.3s;
 }
 .btn:not(.btn-active):hover {
-  background-color: #00c9b7;
+  background-color: #515961; 
 }
 .btn:active {
   background-color: #00c9b7;
-  color: #313940;
 }
 .btn-active {
-  color: #313940;
-  background-color: #00c9b7;
+  background-color: #00b4a4;
 }
 .btn-active:hover {
-  color: #fff;
-  background-color: #00b4a4;
+  background-color: #00c9b7;
 }
 .piano {
   position: relative;
@@ -202,7 +202,6 @@ body {
   border-top: 1px solid;
   border-image-slice: 1;
   border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
-  background-color: #313940;
 }
 .footer-container {
   padding: 0 15px;
