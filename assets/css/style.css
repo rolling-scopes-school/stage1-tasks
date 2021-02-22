@@ -68,6 +68,7 @@ ul {
   }
 
   .slider-slide {
+    position: relative;
     align-items: center;
     display: flex;
     flex-shrink: 0;
@@ -76,6 +77,17 @@ ul {
     overflow: hidden;
     text-align: center;
     width: 100%;
+  }
+  
+  .slider-slide .video {
+    height: 100%;
+    width: 177.77777778vh;
+    min-width: 100%;
+    min-height: 56.25vw;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .slider-btns {
@@ -112,18 +124,6 @@ ul {
 
   .slider-btn--next {
     transform: rotate(180deg);
-  }
-}
-
-@media (max-width: 1601px) {
-  .video {
-    width: auto;
-  }
-}
-
-@media (min-width: 1600px) {
-  .video {
-    width: 100%;
   }
 }
 
