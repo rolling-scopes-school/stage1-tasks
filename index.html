@@ -9,11 +9,10 @@
   <link type="image/x-icon" href="assets/favicon.ico" rel="icon">
 
   <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap"
-    rel="stylesheet">
-  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap" rel="stylesheet">
+
   <link type="text/css" href="assets/css/owfont-regular.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 
   <title>relax-app</title>
 </head>
@@ -54,74 +53,89 @@
           </video>
         </div>
       </div>
-  
-      <div class="slider-btn slider-btn--next"></div>
-      <div class="slider-btn slider-btn--prev"></div>
+
+      <button class="fullscreen openfullscreen"></button>
+
+      <div class="slider-btns">
+        <div class="slider-btn slider-btn--prev">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+          </svg>
+        </div>
+        <div class="slider-btn slider-btn--next">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+          </svg>
+        </div>
+      </div>
     </div>
-  
+
     <div class="sidebar">
       <header class="header">
         <h1 class="header-title">RelaxApp</h1>
       </header>
-  
+
       <ul class="playlist">
         <li class="playlist-item audio">
           <button class="audio-toggle" title="Turn on/off sound">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-              <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
             </svg>
           </button>
-          <div class="audio-inner">
-            <span class="audio-name">audio name</span>
-            <label class="audio-volume" title="Volume">
-              <input name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
-            </label>
-          </div>
+          <label class="audio-inner" title="Volume">
+            audio name
+            <input class="audio-volume" name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+          </label>
         </li>
-  
+
         <li class="playlist-item audio">
           <button class="audio-toggle" title="Turn on/off sound">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-              <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
             </svg>
           </button>
-          <div class="audio-inner">
-            <span class="audio-name">audio name</span>
-            <label class="audio-volume" title="Volume">
-              <input name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
-            </label>
-          </div>
+          <label class="audio-inner" title="Volume">
+            audio name
+            <input class="audio-volume" name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+          </label>
         </li>
-  
+
         <li class="playlist-item audio">
           <button class="audio-toggle" title="Turn on/off sound">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-              <path d="M12 3v10.55A4 4 0 1014 17V7h4V3h-6z"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"></path>
             </svg>
           </button>
-          <div class="audio-inner">
-            <span class="audio-name">audio name</span>
-            <label class="audio-volume" title="Volume">
-              <input name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
-            </label>
-          </div>
+          <label class="audio-inner" title="Volume">
+            audio name
+            <input class="audio-volume" name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+          </label>
         </li>
       </ul>
-  
+
       <div class="weather">
-        <div class="weather-city" contenteditable="true">
-          Minsk
+        <form class="weather-form">
+          <input name="location" type="text" title="Find city" autocomplete="off" required>
+          <label for="location">
+            <span>Search location</span>
+          </label>
+        </form>
+
+        <div class="weather-inner">
+          <i class="weather-icon owf owf-800"></i>
+          <div class="weather-description">
+            <div class="weather-temperature">-13°C</div>
+            <div class="weather-appearance">clear</div>
+          </div>
         </div>
-        <i class="weather-icon owf owf-800"></i>
-        <div class="weather-temperature">-13°C</div>
-        <div class="weather-description">clear</div>
       </div>
-  
-      <div class="motivation">
-        <p class="motivation-text">
-          Your limitation—it’s only your imagination.
-        </p>
-      </div>
+
+      <footer class="footer">
+        <a class="github" href="#" target="_blank" rel="noopener noreferrer">github</a>
+        <a class="rss" href="https://rs.school/js/" target="_blank" rel="noopener">
+          <span class="rss-year">'21</span>
+        </a>
+      </footer>
     </div>
   </main>
 
