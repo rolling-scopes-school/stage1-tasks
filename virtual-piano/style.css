@@ -169,9 +169,7 @@ body {
 .piano-key-letter::before {
 	content: attr(data-letter);
 }
-.piano-key-letter::before {
-	content: attr(data-letter);
-}
+
 .piano-key-remove-mouse:active::before {
 	color: #a2abb3;
 }
@@ -241,7 +239,7 @@ body {
 	font-family: "Open Sans", sans-serif;
 	width: 86px;
 	height: 32px;
-	background-image: url(assets/svg/rss.svg);
+	background-image: url("assets/svg/rss.svg");
 	background-size: contain;
 	background-repeat: no-repeat;
 	background-position: left center;
