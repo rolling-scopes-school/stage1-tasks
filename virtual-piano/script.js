@@ -4,21 +4,7 @@ const piano = document.querySelector('.piano'),
       lettersBtn = document.querySelector('.btn-letters'),
       fullscreenEnabled = document.fullscreenEnabled || 
       document.mozFullscreenEnabled || 
-      document.webkitFullscreenEnabled,
-      letters = {
-        keyD:'D',
-        keyF:'F',
-        keyG:'G',
-        keyH:'H',
-        keyJ:'J',
-        keyK:'K',
-        keyL:'L',
-        keyR:'R',
-        keyT:'T',
-        keyU:'U',
-        keyI:'I',
-        keyO:'O'
-      };
+      document.webkitFullscreenEnabled;
 
 
 function addActive(e) {
