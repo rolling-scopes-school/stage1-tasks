@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="image/x-icon" href="assets/favicon.ico" rel="shortcut icon" />
+    <link type="image/x-icon" href="assets/favicon.ico" rel="icon" />
+    <link href="https://fonts.gstatic.com" rel="preconnect" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;800&display=swap"
+      rel="stylesheet"
+    />
+    <link type="text/css" href="css/owfont-regular.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>sounds-app</title>
+  </head>
+  <body>
+    <div class="preloader">
+      <div class="preloader-percent">0%</div>
+      <div class="preloader-box">
+        <div class="preloader-bar"></div>
+      </div>
+    </div>
+    <main class="main">
+      <!-- If you want, you can change the video file -->
+      <div class="slider">
+        <div class="slider-wrapper" style="left: -100%">
+          <div class="slider-slide" data-sounds="island-multisound river-flows-in-you">
+            <video class="video" playsinline preload="none" muted loop>
+              <source src="assets/video/beach.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="slider-slide" data-sounds="light-wind night-sounds">
+            <video class="video" playsinline preload="none" muted loop>
+              <source src="assets/video/night.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="slider-slide" data-sounds="birds cicadas lite-rain river">
+            <video class="video" playsinline preload="none" muted loop>
+              <source src="assets/video/forest-river.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div class="slider-slide" data-sounds="fire cat">
+            <video class="video" playsinline preload="none" muted loop>
+              <source src="assets/video/fire.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div
+            class="slider-slide"
+            data-sounds="blizzard wind-whistle snow-crunch"
+          >
+            <video class="video" playsinline preload="none" muted loop>
+              <source src="assets/video/storm.mp4" type="video/mp4" />
+            </video>
+          </div>
+          <div
+            class="slider-slide"
+            data-sounds="waterfall melody-of-tears"
+          >
+            <video class="video" playsinline preload="none" muted loop>
+              <source src="assets/video/lake.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </div>
+        <button class="fullscreen openfullscreen"></button>
+        <div class="slider-btns">
+          <div class="slider-btn slider-btn--prev">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+            </svg>
+          </div>
+          <div class="slider-btn slider-btn--next">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+              <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <header class="header">
+          <h1 class="header-title">SoundsApp</h1>
+        </header>
+        <main class="sidebar-main">
+          <ul class="playlist">
+            <!-- <li class="playlist-item audio">
+          <button class="audio-toggle" title="Turn on/off sound">
+          </button>
+          <label class="audio-inner" title="Volume">
+            audio name
+            <input class="audio-volume" name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+          </label>
+        </li>
+        <li class="playlist-item audio">
+          <button class="audio-toggle" title="Turn on/off sound">
+          </button>
+          <label class="audio-inner" title="Volume">
+            audio name
+            <input class="audio-volume" name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+          </label>
+        </li>
+        <li class="playlist-item audio">
+          <button class="audio-toggle" title="Turn on/off sound">
+          </button>
+          <label class="audio-inner" title="Volume">
+            audio name
+            <input class="audio-volume" name="volume" data-sizing="%" type="range" min="0" max="100" value="0">
+          </label>
+        </li> -->
+          </ul>
+          <div class="weather">
+            <form class="weather-form">
+              <input
+                value="Minsk"
+                name="location"
+                type="text"
+                title="Find city"
+                autocomplete="off"
+                required
+              />
+              <label for="location">
+                <span>Search location</span>
+              </label>
+            </form>
+            <div class="weather-inner">
+              <div class="weather-item">
+                <i class="weather-icon owf owf-800"></i>
+              </div>
+              <div class="weather-item">
+                <div class="weather-description">
+                  <div class="weather-temperature">-13°C</div>
+                  <div class="weather-appearance">clear</div>
+                </div>
+              </div>
+
+            </div>
+            <div class="weather-inner">
+              <div class="weather-item">
+                <img class="weather-arrow" src="assets/svg/wind.svg"></img>
+              </div>
+              <div class="weather-item">
+                <div class="weather-description">
+                  <div class="weather-speed">9.26m/s</div>
+                <div class="weather-direction">MWM</div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </main>
+        <footer class="footer">
+          <a class="github" href="#" target="_blank" rel="noopener noreferrer"
+            >github</a
+          >
+          <a
+            class="rss"
+            href="https://rs.school/js/"
+            target="_blank"
+            rel="noopener"
+          >
+            <span class="rss-year">'21</span>
+          </a>
+        </footer>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
