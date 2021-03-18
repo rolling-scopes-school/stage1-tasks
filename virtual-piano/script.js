@@ -111,3 +111,4 @@ function fullscreenClick(e) {
 
 const fullscreenBtn = document.querySelector(".fullscreen");
 fullscreenBtn.addEventListener("click", fullscreenClick);
+
