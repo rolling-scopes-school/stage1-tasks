@@ -8,6 +8,7 @@ function playSound(keyId) {
     const audio = document.querySelector(`audio[data-code="${keyId}"]`);
     const key = document.querySelector(`.piano-key[data-code="${keyId}"]`);
     if (!audio) return;
+    if (event.repeat) return;
     audio.currentTime = 0;
     audio.play();
     key.classList.add('piano-key-active', 'piano-key-active-pseudo');
