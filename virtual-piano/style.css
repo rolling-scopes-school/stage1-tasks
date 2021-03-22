@@ -94,9 +94,6 @@ body {
 	transition: 0.3s;
 	cursor: pointer;
 }
-.piano-key:hover {
-	background-color: #fff;
-}
 .keys-sharp {
 	position: absolute;
 	top: 0;
@@ -121,6 +118,7 @@ body {
 .piano-key.piano-key-active,
 .piano-key.sharp.piano-key-active {
 	transform: scale(0.96);
+	height: 280px;
 }
 .piano-key.none {
 	background-color: transparent;
@@ -141,14 +139,36 @@ body {
 	bottom: -45px;
 	left: 20px;
 	transition: 0.3s;
+	pointer-events: none;
+}
+
+.piano-key-letter::before {
+	content: attr(data-letter);
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	font-size: 26px;
+	line-height: 40px;
+	text-align: center;
+	color: #a2abb3;
+	bottom: -45px;
+	left: 20px;
+	transition: 0.3s;
+	pointer-events: none;
 }
 .piano-key::after {
 	display: none;
 	content: attr(data-letter);
+	pointer-events: none;
 }
 .piano-key:hover::before,
 .piano-key:hover::after {
 	color: #d7dfe6;
+}
+
+.piano-key-active:hover::before,
+.piano-key-active:hover::after {
+	color: #00b4a4;
 }
 
 .sharp:active {
@@ -174,10 +194,9 @@ body {
 	color: #a2abb3;
 }
 
-.piano-key-active-pseudo:hover::after,
-.piano-key-active-pseudo:hover::before,
-.piano-key-active::after,
-.piano-key-active::before {
+
+.piano-key .piano-key-active::after,
+.piano-key .piano-key-active::before {
 	color: #00b4a4;
 }
 
