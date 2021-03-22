@@ -1,0 +1,324 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
+a:focus {
+  outline: 0;
+}
+html {
+  background: #313940;
+}
+body {
+  min-height: 100vh;
+  background-color: #313940;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
+  background: #313940;
+  overflow-x: hidden;
+}
+.header {
+  text-align: center;
+  width: 100%;
+  border-bottom: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+}
+.header-title {
+  line-height: 60px;
+  font-weight: 300;
+  color: #fff;
+}
+.main {
+  min-height: calc(100vh - 110px);
+  padding: 60px 10px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: space-between;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  width: 306px;
+  height: 40px;
+  margin: 0 auto;
+  margin-bottom: 80px;
+}
+.btn {
+  width: 150px;
+  height: 40px;
+  padding: 0 10px;
+  background-color: #454c53;
+  border: 0;
+  border-radius: 2px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  outline: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn:not(.btn-active):hover {
+  background-color: #515961;
+}
+.btn:active {
+  background-color: #00c9b7;
+}
+.btn-active {
+  background-color: #00b4a4;
+}
+.btn-active:hover {
+  background-color: #00c9b7;
+}
+.piano {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 270px;
+  max-width: 560px;
+  margin: 0 auto 60px;
+}
+.piano-key {
+  position: relative;
+  width: 80px;
+  height: 270px;
+  background-color: rgba(255, 255, 255, 0.85);
+  margin: 4px;
+  border-radius: 0px 0px 12px 12px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.piano-key:hover {
+  background-color: #fff;
+}
+.keys-sharp {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 53px;
+  right: 53px;
+  display: flex;
+  justify-content: space-between;
+  pointer-events: none;
+}
+.piano-key.sharp {
+  width: 54px;
+  height: 170px;
+  background-color: #313940;
+  border: 0;
+  border-radius: 0px 0px 9px 9px;
+  top: 0;
+  z-index: 3;
+  pointer-events: auto;
+  transform-origin: center top;
+  margin: 0px;
+}
+.piano-key.piano-key-active,
+.piano-key.sharp.piano-key-active {
+  transform: scale(0.96);
+}
+.piano-key.none {
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+  pointer-events: none;
+}
+.piano-key::before,
+.piano-key::after {
+  content: attr(data-note);
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  font-size: 26px;
+  line-height: 40px;
+  text-align: center;
+  color: #a2abb3;
+  bottom: -45px;
+  left: 20px;
+  transition: 0.3s;
+  pointer-events: none;
+}
+.piano-key::after {
+  display: none;
+  content: attr(data-letter);
+}
+.piano-key:hover::before,
+.piano-key:hover::after {
+  color: #d7dfe6;
+}
+
+.piano-key-active:hover::before,
+.piano-key-active:hover::after {
+  color: #00b4a4;
+}
+
+.sharp:active {
+  border-top: 0;
+}
+
+.piano-key.sharp::before,
+.piano-key.sharp::after {
+  bottom: 175px;
+  left: 7px;
+}
+.piano-key.letter::before {
+  display: none;
+}
+.piano-key.letter::after {
+  display: block;
+}
+.piano-key-letter::before {
+  content: attr(data-letter);
+}
+
+.piano-key-remove-mouse:active::before {
+  color: #a2abb3;
+}
+
+.piano-key-active-pseudo:hover::after,
+.piano-key-active-pseudo:hover::before,
+.piano-key-active::after,
+.piano-key-active::before {
+  color: #00b4a4;
+}
+
+.fullscreen {
+  position: fixed;
+  top: 120px;
+  right: 40px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 0;
+  outline: 0;
+  background-size: contain;
+  transition: 0.3s;
+  cursor: pointer;
+  background-image: url("assets/svg/fullscreen-open.svg");
+}
+.fullscreen:hover {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+:-webkit-full-screen .fullscreen {
+  background-image: url("assets/svg/fullscreen-exit.svg");
+}
+.footer {
+  border-top: 1px solid;
+  border-image-slice: 1;
+  border-image-source: linear-gradient(to left, #38495a, #a2abb3, #38495a);
+}
+.footer-container {
+  padding: 0 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.github {
+  display: block;
+  width: 120px;
+  height: 45px;
+  padding-left: 45px;
+  background-image: url("assets/svg/github.svg");
+  background-size: 35px;
+  background-repeat: no-repeat;
+  background-position: left center;
+  line-height: 45px;
+  color: #cbd5de;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif;
+  transition: 0.3s;
+}
+.github:hover {
+  color: #fff;
+}
+.rss {
+  display: block;
+  position: relative;
+  font-family: "Open Sans", sans-serif;
+  width: 86px;
+  height: 32px;
+  background-image: url("assets/svg/rss.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-right: 111px;
+}
+.rss-year {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 21px;
+  letter-spacing: -2px;
+  color: #cbd5de;
+  line-height: 0.9;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.rss:hover .rss-year {
+  right: -5px;
+  letter-spacing: 0;
+}
+@media (max-width: 768px) {
+  .fullscreen {
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+@media (max-width: 600px) {
+  .main {
+    padding-top: 40px;
+  }
+  .piano {
+    width: 310px;
+    height: 160px;
+  }
+  .piano-key {
+    width: 44px;
+    height: 160px;
+    border-radius: 0px 0px 8px 8px;
+    border: 2px solid #313940;
+  }
+  .keys-sharp {
+    left: 26px;
+    right: 26px;
+  }
+  .piano-key.sharp {
+    width: 36px;
+    height: 100px;
+    border-radius: 0px 0px 6px 6px;
+  }
+  .piano-key::before,
+  .piano-key::after {
+    width: 30px;
+    height: 30px;
+    font-size: 22px;
+    bottom: -35px;
+    left: 7px;
+    font-size: 22px;
+  }
+  .piano-key.sharp::before,
+  .piano-key.sharp::after {
+    bottom: 115px;
+    left: 3px;
+  }
+  .btn-container {
+    width: 244px;
+    height: 40px;
+    margin-bottom: 80px;
+  }
+  .btn {
+    width: 120px;
+    height: 40px;
+  }
+}
