@@ -12,7 +12,7 @@
     href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&family=Open+Sans:wght@300;400;800&display=swap"
     rel="stylesheet">
   <link href="style.css" rel="stylesheet">
-
+	<script src="script.js" defer></script>
   <title>virtual-piano</title>
 </head>
 
@@ -23,23 +23,23 @@
   <main class="main">
     <div class="btn-container">
       <button class="btn btn-notes btn-active">Notes</button>
-      <button class="btn btn-letters">Letters</button>
+      <button class="btn btn-letters ">Letters</button>
     </div>
     <div class="piano">
-      <div class="piano-key" data-letter="D" data-note="c"></div>
-      <div class="piano-key" data-letter="F" data-note="d"></div>
-      <div class="piano-key" data-letter="G" data-note="e"></div>
-      <div class="piano-key" data-letter="H" data-note="f"></div>
-      <div class="piano-key" data-letter="J" data-note="g"></div>
-      <div class="piano-key" data-letter="K" data-note="a"></div>
-      <div class="piano-key" data-letter="L" data-note="b"></div>
+      <div class="piano-key" data-letter="D" data-key="KeyD" data-note="c"></div>
+      <div class="piano-key" data-letter="F" data-key="KeyF" data-note="d"></div>
+      <div class="piano-key" data-letter="G" data-key="KeyG" data-note="e"></div>
+      <div class="piano-key" data-letter="H" data-key="KeyH" data-note="f"></div>
+      <div class="piano-key" data-letter="J" data-key="KeyJ" data-note="g"></div>
+      <div class="piano-key" data-letter="K" data-key="KeyK" data-note="a"></div>
+      <div class="piano-key" data-letter="L" data-key="KeyL" data-note="b"></div>
       <div class="keys-sharp">
-        <div class="piano-key sharp" data-letter="R" data-note="c♯"></div>
-        <div class="piano-key sharp" data-letter="T" data-note="d♯"></div>
+        <div class="piano-key sharp" data-letter="R" data-key="KeyR" data-note="c♯"></div>
+        <div class="piano-key sharp" data-letter="T" data-key="KeyT" data-note="d♯"></div>
         <div class="piano-key sharp none"></div>
-        <div class="piano-key sharp" data-letter="U" data-note="f♯"></div>
-        <div class="piano-key sharp" data-letter="I" data-note="g♯"></div>
-        <div class="piano-key sharp" data-letter="O" data-note="a♯"></div>
+        <div class="piano-key sharp" data-letter="U" data-key="KeyU" data-note="f♯"></div>
+        <div class="piano-key sharp" data-letter="I" data-key="KeyI" data-note="g♯"></div>
+        <div class="piano-key sharp" data-letter="O" data-key="KeyO" data-note="a♯"></div>
       </div>
     </div>
     <button class="fullscreen openfullscreen"></button>
