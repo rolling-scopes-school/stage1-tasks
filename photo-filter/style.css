@@ -171,8 +171,8 @@ output {
 img {
   height: 100%;
   width: 100%;
-  max-height: 520px;
-  max-width: 830px;
+  max-height: 420px;
+  max-width: 672px;
   object-fit: contain;
   filter: blur(var(--blur, 0px)) invert(var(--invert, 0%))
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
