@@ -4,47 +4,43 @@ function playAudio(src) {
     audio.currentTime = 0
     audio.play()
 }
-const button = document.querySelectorAll('button')
-console.log(button)
-button.forEach(el => {
-    switch (el.innerHTML) {
-        case "Play DO":
-            el.addEventListener('click', () => playAudio('media/c.mp3'))
-            break
-        case "Play RE":
-            el.addEventListener('click', () => playAudio('media/d.mp3'))
-            break
-        case "Play MI":
-            el.addEventListener('click', () => playAudio('media/e.mp3'))
-            break
-        case "Play FA":
-            el.addEventListener('click', () => playAudio('media/f.mp3'))
-            break
-        case "Play SOL":
-            el.addEventListener('click', () => playAudio('media/g.mp3'))
-            break
-        case "Play LA":
-            el.addEventListener('click', () => playAudio('media/a.mp3'))
-            break
-        case "Play SI":
-            el.addEventListener('click', () => playAudio('media/b.mp3'))
-            break
-        case "Play DO#":
-            el.addEventListener('click', () => playAudio('media/c-sh.mp3'))
-            break
-        case "Play RE#":
-            el.addEventListener('click', () => playAudio('media/d-sh.mp3'))
-            break
-        case "Play FA#":
-            el.addEventListener('click', () => playAudio('media/f-sh.mp3'))
-            break
-        case "Play SOL#":
-            el.addEventListener('click', () => playAudio('media/g-sh.mp3'))
-            break
-        case "Play LA#":
-            el.addEventListener('click', () => playAudio('media/a-sh.mp3'))
-            break
-        default:
-            break
-    }
+const piano = document.querySelectorAll('.piano-key')
+
+
+piano.forEach(el => {
+    el.addEventListener('click', () => playAudio(`assets/audio/${el.dataset.note}.mp3`))
 })
+
+
+function turnLabels() {
+    if (!event.target.classList.contains('btn-active')) {
+        document.querySelectorAll('.btn').forEach(e => e.classList.toggle("btn-active"))
+        piano.forEach(el => el.classList.toggle("piano-key-letter"))
+    }
+}
+document.querySelectorAll(".btn-container").forEach(button => button.addEventListener("click", function () {
+    turnLabels(this);
+}));
+
+
+function fullScreenMod() {
+    let element = document.documentElement;
+    element.requestFullscreen =
+        element.requestFullscreen ||
+        element.mozRequestFullscreen ||
+        element.msRequestFullscreen ||
+        element.webkitRequestFullscreen;
+
+    if (!document.fullscreenElement) {
+        element.requestFullscreen()
+
+    } else {
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+    }
+}
+
+document.querySelector('.fullscreen').addEventListener("click", () => fullScreenMod())
+
+
