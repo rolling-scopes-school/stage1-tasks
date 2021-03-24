@@ -78,6 +78,18 @@ input[type='range']::-webkit-slider-thumb {
 label:hover input[type='range']::-webkit-slider-thumb {
   background-color: #00c9b7;
 }
+label:active input[type='range']::-webkit-slider-thumb {
+  background-color: #008275;
+  width:20px;
+  border-radius: 25%;
+}
+input[type='range']::-webkit-slider-runnable-track {
+  transition: 0.3s;
+}
+label:active input[type='range']::-webkit-slider-runnable-track {
+  background-color: #9eb9d015;
+  border-radius:50%
+}
 output {
   position: absolute;
   width: 60px;
@@ -91,6 +103,9 @@ output {
   line-height: 40px;
   border-radius: 2px;
   transition: 0.3s;
+}
+label:active output {
+  background-color: #74808c;
 }
 .btn-container {
   margin-bottom: 20px;
@@ -171,8 +186,8 @@ output {
 img {
   height: 100%;
   width: 100%;
-  max-height: 420px;
-  max-width: 672px;
+  max-height: 520px;
+  max-width: 830px;
   object-fit: contain;
   filter: blur(var(--blur, 0px)) invert(var(--invert, 0%))
     sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
@@ -305,4 +320,7 @@ img {
   .btn-container > * {
     margin: 3px;
   }
+}
+:not(:root):fullscreen::backdrop {
+  background-color: #313940;
 }
