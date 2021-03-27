@@ -17,3 +17,15 @@ function inputValue(event) {
   }
 }
 filters.forEach((input) => input.addEventListener("input", inputValue));
+
+// fullScreen
+const fullScreen = document.querySelector(".fullscreen");
+const elem = document.documentElement;
+
+fullScreen.addEventListener("mousedown", () => {
+  if (document.fullscreenElement === null) {
+    elem.requestFullscreen();
+  } else {
+    document.exitFullscreen();
+  }
+});
