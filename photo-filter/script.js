@@ -32,10 +32,52 @@ function btnReset() {
   });
   output.forEach((el) => (el.value = el.defaultValue));
 }
+//  Next picture
+let count = 1;
+function nextPicture() {
+  let img = document.querySelector("img");
+  let src = "";
+  let timer = new Date().getHours();
+  let season = "";
+  switch (true) {
+    case count < 10:
+      count = "0" + count;
+      break;
+    case count === 21:
+      count = "0" + 1;
+      break;
+    default:
+      count;
+      break;
+  }
+  switch (true) {
+    case timer >= "0" && timer < "6":
+      season = "night";
+      break;
+    case timer < "12":
+      season = "morning";
+      break;
+    case timer < "18":
+      season = "day";
+      break;
+    default:
+      season = "evening";
+      break;
+  }
+  img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${season}/${count}.jpg`;
+  count++;
+}
 
 // all btn
 btnContainer.addEventListener("mousedown", (event) => {
-  if (event.target.classList.contains("btn-reset")) {
-    btnReset();
+  switch (true) {
+    case event.target.classList.contains("btn-reset"):
+      btnReset();
+      break;
+    case event.target.classList.contains("btn-next"):
+      nextPicture();
+      break;
+    default:
+      break;
   }
 });
