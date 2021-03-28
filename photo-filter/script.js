@@ -6,6 +6,7 @@ const filters = document.querySelectorAll(".filters");
 const input = document.querySelectorAll("input");
 const output = document.querySelectorAll("output");
 const btnContainer = document.querySelector(".btn-container");
+let img = document.querySelector("img");
 
 //  filters
 function inputValue(event) {
@@ -35,8 +36,6 @@ function btnReset() {
 //  Next picture
 let count = 1;
 function nextPicture() {
-  let img = document.querySelector("img");
-  let src = "";
   let timer = new Date().getHours();
   let season = "";
   switch (true) {
@@ -67,7 +66,14 @@ function nextPicture() {
   img.src = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${season}/${count}.jpg`;
   count++;
 }
-
+// Load picture
+function loadPicture() {
+  const selectedFile = document.querySelector(".btn-load--input");
+  let files = selectedFile.files[0];
+  let reader = new FileReader();
+  reader.readAsDataURL(files);
+  reader.onload = () => (img.src = reader.result);
+}
 // all btn
 btnContainer.addEventListener("mousedown", (event) => {
   switch (true) {
