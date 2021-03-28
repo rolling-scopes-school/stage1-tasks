@@ -74,6 +74,29 @@ function loadPicture() {
   reader.readAsDataURL(files);
   reader.onload = () => (img.src = reader.result);
 }
+
+// Save Picture
+//  canvas
+const canvas = document.querySelector("canvas");
+const ctx = canvas.getContext("2d");
+const imgCanvas = new Image();
+
+function savePicture() {
+  imgCanvas.src = img.src;
+  imgCanvas.setAttribute("crossOrigin", "anonymous");
+  imgCanvas.onload = function () {
+    canvas.width = img.width;
+    canvas.height = img.height;
+    ctx.drawImage(img, 0, 0);
+  };
+  // let link = document.createElement("a");
+  // link.download = "image.jpeg";
+  // link.href = canvas.toDataURL();
+  // link.click();
+  // link.delete;
+}
+savePicture();
+
 // all btn
 btnContainer.addEventListener("mousedown", (event) => {
   switch (true) {
@@ -82,6 +105,9 @@ btnContainer.addEventListener("mousedown", (event) => {
       break;
     case event.target.classList.contains("btn-next"):
       nextPicture();
+      break;
+    case event.target.classList.contains("btn-save"):
+      savePicture();
       break;
     default:
       break;
