@@ -86,9 +86,10 @@ output {
   top: 24px;
   background-color: #454c53;
   border: 1px solid #454c53;
-  text-align: left;
-  padding-left: 10px;
-  line-height: 40px;
+  text-align: center;
+  color: aliceblue;
+  line-height: 30px;
+  font-size: 25px;
   border-radius: 2px;
   transition: 0.3s;
 }
@@ -169,6 +170,7 @@ output {
   --hue: 0deg;
 }
 img {
+  /* display: none; */
   height: 100%;
   width: 100%;
   max-height: 520px;
@@ -177,11 +179,15 @@ img {
   filter: blur(var(--blur, 0px)) invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
 }
 canvas {
-  /* display: none; */
-  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
-  width: 100%;
+  display: none;
   height: 100%;
+  width: 100%;
+  max-height: 520px;
+  max-width: 830px;
+  object-fit: contain;
+  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%)) sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%)) hue-rotate(var(--hue, 0deg));
 }
+
 .fullscreen {
   position: fixed;
   top: 120px;
