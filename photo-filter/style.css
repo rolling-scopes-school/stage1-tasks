@@ -169,6 +169,7 @@ output {
   --hue: 0deg;
 }
 img {
+  display: none;
   height: 100%;
   width: 100%;
   max-height: 520px;
@@ -305,4 +306,14 @@ img {
   .btn-container > * {
     margin: 3px;
   }
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+  max-width: 830px;
+  max-height: 520px;
+  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%))
+    sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
+    hue-rotate(var(--hue, 0deg));
 }

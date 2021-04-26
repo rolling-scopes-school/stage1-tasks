@@ -18,41 +18,42 @@
     <div class="filters">
       <label>
         Blur:
-        <input name="blur" data-sizing="px" type="range" min="0" max="10" value="0" />
-        <output name="result">0</output>
+        <input id="blur-input" name="blur" data-sizing="px" type="range" min="0" max="10" value="0" />
+        <output id="blur-output" name="result">0</output>
       </label>
       <label>
         Invert:
-        <input name="invert" data-sizing="%" type="range" min="0" max="100" value="0" />
-        <output name="result">0</output>
+        <input id="invert-input" name="invert" data-sizing="%" type="range" min="0" max="100" value="0" />
+        <output id="invert-output" name="result">0</output>
       </label>
       <label>
         Sepia:
-        <input name="sepia" data-sizing="%" type="range" min="0" max="100" value="0" />
-        <output name="result">0</output>
+        <input id="seria-input" name="sepia" data-sizing="%" type="range" min="0" max="100" value="0" />
+        <output id="seria-output" name="result">0</output>
       </label>
       <label>
         Saturate:
-        <input name="saturate" data-sizing="%" type="range" min="0" max="200" value="100" />
-        <output name="result">100</output>
+        <input id="saturate-input" name="saturate" data-sizing="%" type="range" min="0" max="200" value="100" />
+        <output id="saturate-output" name="result">100</output>
       </label>
       <label>
         Hue rotate:
-        <input name="hue" data-sizing="deg" type="range" min="0" max="360" value="0" />
-        <output name="result">0</output>
+        <input id="rotate-input" name="hue" data-sizing="deg" type="range" min="0" max="360" value="0" />
+        <output id="rotate-output" name="result">0</output>
       </label>
     </div>
     <div class="editor">
       <div class="btn-container">
-        <button class="btn btn-reset">Reset</button>
-        <button class="btn btn-next btn-active">Next picture</button>
+        <button id="btn-reset" class="btn btn-reset">Reset</button>
+        <button id="next-pctr" class="btn btn-next btn-active">Next picture</button>
         <label class="btn btn-load" for="btnInput">
-          Load picture
-          <input class="btn-load--input" id="btnInput" name="upload" type="file" placeholder="Load picture" />
+          <div id="load">Load picture</div>
+          <input id="input" class="btn-load--input" id="btnInput" multiple="false" accept=".jpg, .jpeg, .png" name="upload" type="file" placeholder="Load picture" />
         </label>
-        <button class="btn btn-save">Save picture</button>
+        <button id="save" class="btn btn-save">Save picture</button>
       </div>
-      <img src="assets/img/img.jpg" alt="image" />
+      <img id="ph" src="assets/img/img.jpg" alt="image" />
+        <canvas id="photo" height="750px" width="1200px"></canvas>
     </div>
   </main>
   <footer class="footer">
@@ -63,6 +64,7 @@
       </a>
     </div>
   </footer>
-  <button class="fullscreen openfullscreen"></button>
+  <button id="btnFull" class="fullscreen openfullscreen"></button>
+  <script src="./script.js"></script>
 </body>
 </html>
