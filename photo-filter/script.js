@@ -13,7 +13,6 @@ const btnReset = document.getElementById("btn-reset");
 const inputs = document.querySelectorAll(".filters input");
 const file = document.getElementById("input");
 const save = document.querySelector(".btn-save");
-const nextPicture = document.getElementById("next-pctr");
 const image = document.getElementById("photo");
 const ph = document.getElementById("ph");
 
@@ -95,6 +94,7 @@ file.addEventListener("change", previewFile);
 
 function previewFile() {
   ctx.filter = "";
+  removeStyle()
     
   ctx.drawImage(picture, 0, 0);
   const preview = document.querySelector("img");
@@ -209,3 +209,45 @@ function removeStyle() {
   image.style = "";
   ctx.filter = "";
 }
+
+//next picture 
+const btnNext = document.getElementById("next-pctr");
+
+let images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
+let i = 0;
+
+let timeOfDay = '';
+let dateNow = new Date(Date.now());
+let dateHour = dateNow.getHours();
+if (dateHour >= 6 && dateHour < 12) {
+    timeOfDay = 'morning';
+} else if (dateHour >= 12 && dateHour < 18) {
+    timeOfDay = 'day'
+} else if (dateHour >= 18 && dateHour < 24) {
+    timeOfDay = 'evening'
+} else if (dateHour >= 0 && dateHour < 6) {
+    timeOfDay = 'night'
+}
+let base = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/`;
+
+function nextImage(src) {
+  const img = new Image();
+  img.src = src;
+  img.onload = () => {
+      picture.src = src;
+      ctx.drawImage(img, 0, 0, 1200, 750)
+
+  };
+}
+
+function getImage() {
+  const index = i % images.length;
+  const imageSrc = base + images[index];
+  nextImage(imageSrc);
+  console.log(imageSrc);
+  i++;
+  btnNext.disabled = true;
+  setTimeout(function () { btnNext.disabled = false }, 300);
+}
+
+btnNext.addEventListener('click', getImage);
