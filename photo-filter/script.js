@@ -18,7 +18,7 @@ const ph = document.getElementById("ph");
 
 const ctx = image.getContext("2d");
 const picture = document.getElementById("ph");
-ctx.drawImage(picture, 0, 0);
+ctx.drawImage(picture, 0, 0, 1200, 750);
 
 //save image not style
 save.addEventListener("click", () => {
@@ -73,14 +73,15 @@ save.addEventListener("click", () => {
 
   console.log(stringFilter);
   ctx.filter = stringFilter;
-  ctx.drawImage(ph, 0, 0);
+  ctx.drawImage(ph, 0, 0, 1200, 750);
+
 
 
   const dataURL = image.toDataURL();
   const picture = document.createElement("img");
   picture.src = dataURL;
   image.style = "";
-  ctx.drawImage(ph, 0, 0);
+  ctx.drawImage(ph, 0, 0, 1200, 750);
 
 
   const a = document.createElement("a");
@@ -96,7 +97,7 @@ function previewFile() {
   ctx.filter = "";
   removeStyle()
     
-  ctx.drawImage(picture, 0, 0);
+  ctx.drawImage(picture, 0, 0, 1200, 750);
   const preview = document.querySelector("img");
   const file = document.querySelector("input[type=file]").files[0];
   const reader = new FileReader();
@@ -109,11 +110,11 @@ function previewFile() {
     picture.onload = function () {
       ctx.filter = "";
     
-      ctx.drawImage(picture, 0, 0);
+      ctx.drawImage(picture, 0, 0, 1200, 750);
       ctx.clearRect(0, 0, image.width, image.height);
   ctx.filter = "";
 
-      ctx.drawImage(picture, 0, 0);
+      ctx.drawImage(picture, 0, 0, 1200, 750);
       ph.src = picture.src;
     };
   };
@@ -121,7 +122,7 @@ function previewFile() {
   if (file) {
     ctx.filter = "";
     
-    ctx.drawImage(picture, 0, 0);
+    ctx.drawImage(picture, 0, 0, 1200, 750);
     reader.readAsDataURL(file);
     preview.style = image.style.setProperty(
       `--${this.name}`,
@@ -129,12 +130,12 @@ function previewFile() {
     );
     ctx.filter = "";
     
-    ctx.drawImage(picture, 0, 0);
+    ctx.drawImage(picture, 0, 0, 1200, 750);
   } else {
     const picture = document.getElementById("ph");
   ctx.filter = "";
     
-    ctx.drawImage(picture, 0, 0);
+    ctx.drawImage(picture, 0, 0, 1200, 750);
   }
 }
 
@@ -192,7 +193,7 @@ inputRotate.oninput = function () {
 btnReset.addEventListener("click", () => {
   
   removeStyle()
-  ctx.drawImage(picture, 0, 0);
+  ctx.drawImage(picture, 0, 0, 1200, 750);
 });
 
 function removeStyle() {
@@ -228,7 +229,7 @@ if (dateHour >= 6 && dateHour < 12) {
 } else if (dateHour >= 0 && dateHour < 6) {
     timeOfDay = 'night'
 }
-let base = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/`;
+let base = `./assets/images/${timeOfDay}/`;
 
 function nextImage(src) {
   const img = new Image();
@@ -236,7 +237,6 @@ function nextImage(src) {
   img.onload = () => {
       picture.src = src;
       ctx.drawImage(img, 0, 0, 1200, 750)
-
   };
 }
 
