@@ -14,6 +14,13 @@
 - https://youtu.be/NOhDysLnTvY
 - https://youtu.be/aWmJ5DgyWPI
 - https://youtu.be/2OR0OCr6uRE
+#### Секция Contacts
+Координаты маркеров
+- marker1 [2.3364, 48.86091]
+- marker2 [2.3333, 48.8602]
+- marker2 [2.3397, 48.8607]
+- marker2 [2.3330, 48.8619]
+- marker2 [2.3365, 48.8625]
 #### Footer 
 - https://www.youtube.com/user/louvre
 - https://www.instagram.com/museelouvre/
