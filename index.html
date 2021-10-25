@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="assets/favicon.ico" rel="shortcut icon" />
+  <link rel="stylesheet" href="css/owfont-regular.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <title>momentum</title>
+</head>
+<body>
+  <header class="header">
+    <div class="player">
+      <audio src="zemf.mp3"></audio>
+      <!-- <div class="player-controls">
+        <button class="play-prev player-icon"></button>
+        <button class="play player-icon play-song"></button>
+        <button class="play-next player-icon"></button>
+      </div> -->
+      <input class='vid-line' type="range" min="0" max="100" value="0" name="range" step="1"/>
+      <ul class="play-list">
+      </ul>
+    </div>
+    <button class="settings__button">
+      <img src="assets/img/settings.png" width = "50px" height = "50px" alt="">
+    </button>
+    <div class="settings">
+      <button class="close">&times;</button>
+      <p class="settings__name">Language</p>
+      <div class="languages">
+        <button class="en lang"> en </button>
+        <button class="ru lang"> ru </button>
+        <button class="bl lang">bl </button>
+      </div>
+      <p class="settings__name">Picture type</p>
+      <div class="pictures">
+        <button class="pic git">Git</button>
+        <button class="pic api">Unsplash</button>
+        <button class="pic flic">Flickr</button>
+      <select class="what-pic">
+        <option class='pic-type'>nature</option>
+        <option class='pic-type'>animals</option>
+        <option class='pic-type'>daytime</option>
+      </select>
+      </div>
+      <!-- <p class="settings__name">Do you want to delete anything?</p> -->
+      <!-- <select class="select-del" name="" id="">
+        <option value="time" class="delete">Time</option>
+        <option value="date" class="delete">Date</option>
+        <option value="greeting-container" class="delete">Greeting</option>
+        <option value="weather" class="delete">Weather</option>
+        <option value="player" class="delete">Player</option>
+        <option value="quotes" class="delete">Quotes</option>
+      </select> -->
+    </div>
+    
+    
+    <div class="weather">
+      <input type="text" class="city" />
+      <i class="weather-icon owf"></i>
+      <div class="weather-error"></div>
+      <div class="description-container">
+        <span class="temperature"></span>
+        <span class="weather-description"></span>
+      </div>
+      <div class="wind"></div>
+      <div class="humidity"></div>
+    </div>
+  </header>
+  <main class="main">
+    <div class="slider-icons">
+      <button class="slide-prev slider-icon"></button>
+      <button class="slide-next slider-icon"></button>
+    </div>
+    <time class="time"></time>
+    <date class="date"></date>
+    <div class="greeting-container">
+      <span class="greeting"></span>
+      <input type="text" class="name" placeholder="[Enter name]"/>
+    </div>
+  </main>
+  <footer class="footer">
+    <button class="change-quote"></button>
+    <div>
+      <div class="quote"></div>
+      <div class="author"></div>
+    </div>
+  </footer>
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>
