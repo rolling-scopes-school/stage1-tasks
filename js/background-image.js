@@ -9,10 +9,12 @@ let u = []
 
 let picApi = document.querySelector('.api')
 let picGit = document.querySelector('.git')
+let picFl = document.querySelector('.flic')
 
 let obj = {
     'api': api,
-    'git': git
+    'git': git,
+    'flic': api
 }
 
 picApi.onclick = () => {
@@ -23,6 +25,10 @@ picApi.onclick = () => {
     localStorage.setItem('pics', 'git')
     location.reload()
     }
+    picFl.onclick = () => {
+        localStorage.setItem('pics', 'api')
+        location.reload()
+        }
 
 let s = localStorage.getItem('pics')
 let pics = obj[s]

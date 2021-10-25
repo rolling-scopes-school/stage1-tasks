@@ -21,20 +21,40 @@
       <ul class="play-list">
       </ul>
     </div>
-    <div class="languages">
-      <button class="en lang"> en </button>
-      <button class="ru lang"> ru </button>
-      <button class="bl lang">bl </button>
+    <button class="settings__button">
+      <img src="assets/img/settings.png" width = "50px" height = "50px" alt="">
+    </button>
+    <div class="settings">
+      <button class="close">&times;</button>
+      <p class="settings__name">Language</p>
+      <div class="languages">
+        <button class="en lang"> en </button>
+        <button class="ru lang"> ru </button>
+        <button class="bl lang">bl </button>
+      </div>
+      <p class="settings__name">Picture type</p>
+      <div class="pictures">
+        <button class="pic git">Git</button>
+        <button class="pic api">Unsplash</button>
+        <button class="pic flic">Flickr</button>
+      <select class="what-pic">
+        <option class='pic-type'>nature</option>
+        <option class='pic-type'>animals</option>
+        <option class='pic-type'>daytime</option>
+      </select>
+      </div>
+      <!-- <p class="settings__name">Do you want to delete anything?</p> -->
+      <!-- <select class="select-del" name="" id="">
+        <option value="time" class="delete">Time</option>
+        <option value="date" class="delete">Date</option>
+        <option value="greeting-container" class="delete">Greeting</option>
+        <option value="weather" class="delete">Weather</option>
+        <option value="player" class="delete">Player</option>
+        <option value="quotes" class="delete">Quotes</option>
+      </select> -->
     </div>
-    <div class="pictures">
-      <button class="git">git</button>
-      <button class="api">api</button>
-    <select class="what-pic">
-      <option class='pic-type'>nature</option>
-      <option class='pic-type'>animals</option>
-      <option class='pic-type'>daytime</option>
-    </select>
-    </div>
+    
+    
     <div class="weather">
       <input type="text" class="city" />
       <i class="weather-icon owf"></i>

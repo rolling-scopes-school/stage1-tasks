@@ -1,97 +1,6 @@
-export {playAudio}
-import {playList} from './playList.js'
-let playListContainer = document.querySelector('.play-list')
-for(let i = 0; i < playList.length; i++) {
-  const li = document.createElement('li')
-  li.style.listStyle = 'none'
-    playListContainer.append(li)
-    li.innerHTML = `      <div class="player-controls">
-    <button class="play-prev player-icon"></button>
-    <button class="play player-icon play-song"></button>
-    <button class="play-next player-icon"></button>
-  </div>`}
-  let button = document.querySelectorAll('.play-song')
-  let prev = document.querySelectorAll('.play-prev')
-let next = document.querySelectorAll('.play-next')
-console.log(button)
-let s
-
-for (let i = 0; i < button.length; i++) {
-  let pre = i-1
-  let nex = i+1
-  let audio = new Audio()
-  button[i].onclick = () => {
-    audio.src = playList[i].src
-    playPause(i, audio)
-  }
-  prev[i].onclick = () => {
-    // song = playList[pre].src
-    audio.src = playList[pre].src
-     previous(pre, audio)
-    }
-  next[i].onclick = () => {
-    // song = playList[nex].src
-    audio.src = playList[nex].src
-    tnext(nex, audio)
-  }
-}
-let isPlay = false
-
-function playPause(n, audio) {
-  //audio.src = playList[n].src
-  for (let i = 0; i < button.length; i++) {
-    if (i != n) {
-      button[i].classList.remove('pause')
-      button[i].classList.add('play')
-      audio.pause()
-    }
-  }
-  isPlay = !isPlay
-    toggle(n)
-    console.log(isPlay)
-    plPs(n, audio)
-    s = n
-}
-function plPs(n, audio) {
-  if (isPlay == false) {
-    audio.pause()
-    console.log('pause')
-  }
-  else {
-    audio.play()
-    console.log('yeah')
-    console.log('play')
-  }
-}
-function toggle(n) {
-   button[n].classList.toggle('play')
-   button[n].classList.toggle('pause')
-}
-function previous(n, audio) {
-  console.log(isPlay)
-  isPlay = !isPlay
-   playPause(n, audio)
-}
-function tnext(n, audio) {
-  console.log(isPlay)
-  isPlay = !isPlay
-  playPause(n, audio)
-}
-function playAudio() {
-
-}
-playAudio()
-
 // export {playAudio}
 // import {playList} from './playList.js'
 // let playListContainer = document.querySelector('.play-list')
-// const audio = new Audio();
-// let isPlay = 1
-// let c
-// let n
-// let vidLine = document.querySelector('.vid-line')
-// let stop
-
 // for(let i = 0; i < playList.length; i++) {
 //   const li = document.createElement('li')
 //   li.style.listStyle = 'none'
@@ -104,105 +13,196 @@ playAudio()
 //   let button = document.querySelectorAll('.play-song')
 //   let prev = document.querySelectorAll('.play-prev')
 // let next = document.querySelectorAll('.play-next')
-//     function toggleBtn(b) {
-//       b.classList.toggle('pause');
-//       b.classList.toggle('play');
+// console.log(button)
+// let s
+
+// for (let i = 0; i < button.length; i++) {
+//   let pre = i-1
+//   let nex = i+1
+//   let audio = new Audio()
+//   button[i].onclick = () => {
+//     audio.src = playList[i].src
+//     playPause(i, audio)
+//   }
+//   prev[i].onclick = () => {
+//     // song = playList[pre].src
+//     audio.src = playList[pre].src
+//      previous(pre, audio)
 //     }
-//     let track
+//   next[i].onclick = () => {
+//     // song = playList[nex].src
+//     audio.src = playList[nex].src
+//     tnext(nex, audio)
+//   }
+// }
+// let isPlay = false
+
+// function playPause(n, audio) {
+//   //audio.src = playList[n].src
+//   for (let i = 0; i < button.length; i++) {
+//     if (i != n) {
+//       button[i].classList.remove('pause')
+//       button[i].classList.add('play')
+//       audio.pause()
+//     }
+//   }
+//   isPlay = !isPlay
+//     toggle(n)
+//     console.log(isPlay)
+//     plPs(n, audio)
+//     s = n
+// }
+// function plPs(n, audio) {
+//   if (isPlay == false) {
+//     audio.pause()
+//     console.log('pause')
+//   }
+//   else {
+//     audio.play()
+//     console.log('yeah')
+//     console.log('play')
+//   }
+// }
+// function toggle(n) {
+//    button[n].classList.toggle('play')
+//    button[n].classList.toggle('pause')
+// }
+// function previous(n, audio) {
+//   console.log(isPlay)
+//   isPlay = !isPlay
+//    playPause(n, audio)
+// }
+// function tnext(n, audio) {
+//   console.log(isPlay)
+//   isPlay = !isPlay
+//   playPause(n, audio)
+// }
 // function playAudio() {
-//    for (let i = 0; i < button.length; i++) {
-//     console.log(playList)
-//     audio.currentTime = 0
-//         button[i].onclick = function() {
-//           c = audio.currentTime
-//           audio.src = playList[i].src
-//           if (button[i].classList.value.includes('play')) {
-//             setTimeout(function() {
-//               button.forEach(b => {
-//                b.classList.remove('pause')
-//              b.classList.add('play')
-//               })
-//               if (c !== undefined && n == i) {
-//                 audio.currentTime = c
-//               }
-//               n = i
-//               audio.play()
-              
-//                audio.onended = function() {
-//                  console.log(1)
-//                 button[i].classList.remove('pause')
-//                 button[i].classList.add('play')
-//                 button[i + 1].classList.remove('play')
-//                 button[i + 1].classList.add('pause')
-//                 audio.src = playList[i + 1].src
-//                 audio.play()
-
-//                }
-//                let duration = audio.duration
-//                let step = Math.round(100/duration)
-//                let q = Math.round(100/step)
-//        console.log(step)
-//        let stepP = vidLine.value
-//        console.log(+vidLine.value + step)
-//        for (let i = 0; i < q; i++) {
-//         setTimeout(() => {
-//           vidLine.value = +vidLine.value + step
-//           }, 1000)
-//        }
-              
-             
-//               button[i].classList.remove('play')
-//               button[i].classList.add('pause')
-//             }, 50)
-//             console.log(button[i].classList.value)
-//           }
-//           if (button[i].classList.value.includes('pause')) {
-//             stop = 1
-//             console.log(c)
-//             setTimeout(function() {
-//               audio.pause()
-//              button[i].classList.remove('pause')
-//              button[i].classList.add('play')
-//             }, 50)
-           
-//           }
-//         }
-//         console.log(next[i])
-//         next[i].onclick = function() {
-//           if (i + 1 < playList.length) {
-//             setTimeout( function() {
-//             button.forEach(b => {
-//               b.classList.remove('pause')
-//             b.classList.add('play')
-//              })
-//             button[i+1].classList.remove('play')
-//             button[i+1].classList.add('pause')
-//             audio.src = playList[i + 1].src
-//             audio.play()
-//           }, 50)
-//           }
-          
-
-//         }
-//         prev[i].onclick = function() {
-//           if (i - 1  >= 0) {
-//                         setTimeout( function() {
-//             button.forEach(b => {
-//               b.classList.remove('pause')
-//             b.classList.add('play')
-//              })
-//             button[i-1].classList.remove('play')
-//             button[i-1].classList.add('pause')
-//             audio.src = playList[i-1].src
-//             audio.play()
-//           }, 50)
-//           }
-
-//         }
-//       }
 
 // }
 // playAudio()
+
+export {playAudio}
+import {playList} from './playList.js'
+let playListContainer = document.querySelector('.play-list')
+const audio = new Audio();
+let isPlay = 1
+let c
+let n
+let vidLine = document.querySelector('.vid-line')
+let stop
+
+for(let i = 0; i < playList.length; i++) {
+  const li = document.createElement('li')
+  li.style.listStyle = 'none'
+    playListContainer.append(li)
+    li.innerHTML = `      <div class="player-controls">
+    <button class="play-prev player-icon"></button>
+    <button class="play player-icon play-song"></button>
+    <button class="play-next player-icon"></button>
+  </div>`}
+  let button = document.querySelectorAll('.play-song')
+  let prev = document.querySelectorAll('.play-prev')
+let next = document.querySelectorAll('.play-next')
+    function toggleBtn(b) {
+      b.classList.toggle('pause');
+      b.classList.toggle('play');
+    }
+    let track
+function playAudio() {
+   for (let i = 0; i < button.length; i++) {
+    console.log(playList)
+    audio.currentTime = 0
+        button[i].onclick = function() {
+          c = audio.currentTime
+          audio.src = playList[i].src
+          if (button[i].classList.value.includes('play')) {
+            setTimeout(function() {
+              button.forEach(b => {
+               b.classList.remove('pause')
+             b.classList.add('play')
+              })
+              if (c !== undefined && n == i) {
+                audio.currentTime = c
+              }
+              n = i
+              audio.play()
+              
+               audio.onended = function() {
+                 console.log(1)
+                button[i].classList.remove('pause')
+                button[i].classList.add('play')
+                button[i + 1].classList.remove('play')
+                button[i + 1].classList.add('pause')
+                audio.src = playList[i + 1].src
+                audio.play()
+
+               }
+               let duration = audio.duration
+               let step = Math.round(100/duration)
+               let q = Math.round(100/step)
+       console.log(step)
+       let stepP = vidLine.value
+       console.log(+vidLine.value + step)
+       for (let i = 0; i < q; i++) {
+        setTimeout(() => {
+          vidLine.value = +vidLine.value + step
+          }, 1000)
+       }
+              
+             
+              button[i].classList.remove('play')
+              button[i].classList.add('pause')
+            }, 50)
+            console.log(button[i].classList.value)
+          }
+          if (button[i].classList.value.includes('pause')) {
+            stop = 1
+            console.log(c)
+            setTimeout(function() {
+              audio.pause()
+             button[i].classList.remove('pause')
+             button[i].classList.add('play')
+            }, 50)
+           
+          }
+        }
+        console.log(next[i])
+        next[i].onclick = function() {
+          if (i + 1 < playList.length) {
+            setTimeout( function() {
+            button.forEach(b => {
+              b.classList.remove('pause')
+            b.classList.add('play')
+             })
+            button[i+1].classList.remove('play')
+            button[i+1].classList.add('pause')
+            audio.src = playList[i + 1].src
+            audio.play()
+          }, 50)
+          }
+          
+
+        }
+        prev[i].onclick = function() {
+          if (i - 1  >= 0) {
+                        setTimeout( function() {
+            button.forEach(b => {
+              b.classList.remove('pause')
+            b.classList.add('play')
+             })
+            button[i-1].classList.remove('play')
+            button[i-1].classList.add('pause')
+            audio.src = playList[i-1].src
+            audio.play()
+          }, 50)
+          }
+
+        }
+      }
+
+}
+playAudio()
 
       
   // for (let i = 0; i < button.length; i++) {

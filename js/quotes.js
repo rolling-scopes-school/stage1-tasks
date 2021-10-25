@@ -1,5 +1,6 @@
 export {getQuotes}
-
+import { language } from "./switchLang.js";
+let lang = language()
 let r
 let quote = document.querySelector('.quote')
 let author = document.querySelector('.author')
@@ -16,14 +17,33 @@ async function getQuotes() {
     }
 
     r = rand
-    
+
    console.log(r, rand)
-    const quotes = 'data.json'
+   if (lang == 'ru') {
+     const quotes = 'data-ru.json'
     const res = await fetch(quotes)
     const data = await res.json()
     console.log(data[rand])
     quote.innerHTML = data[rand].text;
     author.innerHTML = data[rand].author;
+   }
+   if (lang == 'en') {
+    const quotes = 'data-eng.json'
+   const res = await fetch(quotes)
+   const data = await res.json()
+   console.log(data[rand])
+   quote.innerHTML = data[rand].text;
+   author.innerHTML = data[rand].author;
+  }
+  if (lang == 'be') {
+    const quotes = 'data-be.json'
+   const res = await fetch(quotes)
+   const data = await res.json()
+   console.log(data[rand])
+   quote.innerHTML = data[rand].text;
+   author.innerHTML = data[rand].author;
+  }
+    
   }
   document.querySelector('.change-quote').addEventListener('click', () => {
     getQuotes()

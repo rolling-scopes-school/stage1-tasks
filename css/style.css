@@ -291,3 +291,40 @@ body {
 .what-pic {
   display: none;
 }
+
+.settings {
+   position: absolute;
+   z-index: 3;
+   background-color: black;
+   padding: 20px;
+   line-height: 50px;
+   border-radius: 10px;
+   right: 50px;
+   top: 200px;
+   visibility: hidden;
+}
+
+button {
+  cursor: pointer;
+}
+
+.lang {
+  padding: 5px;
+  width: 50px;
+}
+.close {
+
+  font-size: 25px;
+  padding: 0 8px;
+  border: rgb(112, 234, 255) solid 5px;
+  border-radius: 50%;
+}
+.pic {
+  max-width: 70px;
+  padding: 5px;
+}
+
+.what-pic {
+  height: 30px;
+  border: rgb(145, 255, 112) solid 5px;
+}

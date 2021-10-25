@@ -4,15 +4,33 @@ const weatherIcon = document.querySelector('.weather-icon');
 const temperature = document.querySelector('.temperature');
 const weatherDescription = document.querySelector('.weather-description');
 let city = document.querySelector('.city')
+let l = language()
+let noCity
+let enterCity
+window.onload = function() {
+  getWeather()
+};
 if (localStorage.getItem('city') == '') {
-    city.value = 'Minsk'
+    if (l == 'ru') {
+      city.value = 'Минск'
+      noCity = 'Похоже, такого места нет'
+      enterCity = 'Введите город выше'
+    }
+    if (l == 'be') {
+      city.value = 'Минск'
+      noCity = 'Падобна на тое, такога месца няма'
+      enterCity = 'Увядзіце горад вышэй'
+    }
+    if (l == 'en') {
+      city.value = 'Minsk'
+      noCity = `It seems like this city doesn't exist`
+      enterCity = 'Enter the city above'
+    }
 }
 else {
     city.value = localStorage.getItem('city')
 }
-window.onload = function() {
-    getWeather()
-  };
+
 
   // let lang = language()
   // console.log(lang)
@@ -73,9 +91,9 @@ async function getWeather() {
     else {
       weatherIcon.style.display = 'none'
       temperature.style.display = 'none'
-      weatherDescription.innerHTML = `It seems like this city doesn't exist`;
+      weatherDescription.innerHTML = noCity;
     if (city.value == '') {
-      weatherDescription.innerHTML = `Enter any city above`;
+      weatherDescription.innerHTML = enterCity;
     }
     }
 
