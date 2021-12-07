@@ -1,0 +1,602 @@
+[
+  {
+    "num": 1,
+    "name": "Big ball with a pattern",
+    "count": 2,
+    "year": 1960,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 2,
+    "name": "Green ball with flowers",
+    "count": 5,
+    "year": 2000,
+    "shape": "ball",
+    "color": "green",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 3,
+    "name": "Red matte ball",
+    "count": 3,
+    "year": 1990,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 4,
+    "name": "The icicle is red",
+    "count": 2,
+    "year": 1980,
+    "shape": "figure",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 5,
+    "name": "Red grapes",
+    "count": 4,
+    "year": 1980,
+    "shape": "figure",
+    "color": "red",
+    "size": "medium",
+    "favorite": true
+  },
+  {
+    "num": 6,
+    "name": "Red ball with a pattern",
+    "count": 6,
+    "year": 2010,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 7,
+    "name": "Milky white ball",
+    "count": 12,
+    "year": 1960,
+    "shape": "ball",
+    "color": "white",
+    "size": "medium",
+    "favorite": true
+  },
+  {
+    "num": 8,
+    "name": "Red ball",
+    "count": 10,
+    "year": 2010,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 9,
+    "name": "Bell vintage",
+    "count": 2,
+    "year": 1950,
+    "shape": "bell",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 10,
+    "name": "White ball retro",
+    "count": 7,
+    "year": 1960,
+    "shape": "ball",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 11,
+    "name": "The pine cone is white",
+    "count": 11,
+    "year": 1960,
+    "shape": "cone",
+    "color": "white",
+    "size": "small",
+    "favorite": false
+  },
+  {
+    "num": 12,
+    "name": "White ball with flowers",
+    "count": 5,
+    "year": 1980,
+    "shape": "ball",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 13,
+    "name": "Ball painted river",
+    "count": 3,
+    "year": 1970,
+    "shape": "ball",
+    "color": "blue",
+    "size": "big",
+    "favorite": true
+  },
+  {
+    "num": 14,
+    "name": "Ball painted village",
+    "count": 4,
+    "year": 1970,
+    "shape": "ball",
+    "color": "blue",
+    "size": "big",
+    "favorite": true
+  },
+  {
+    "num": 15,
+    "name": "Bell painted",
+    "count": 3,
+    "year": 1970,
+    "shape": "bell",
+    "color": "blue",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 16,
+    "name": "Cone painted Landscape",
+    "count": 3,
+    "year": 1970,
+    "shape": "cone",
+    "color": "blue",
+    "size": "medium",
+    "favorite": true
+  },
+  {
+    "num": 17,
+    "name": "Cone painted",
+    "count": 7,
+    "year": 1970,
+    "shape": "cone",
+    "color": "red",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 18,
+    "name": "Yellow ball with a bow",
+    "count": 2,
+    "year": 2010,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 19,
+    "name": "Yellow ball with sequins",
+    "count": 12,
+    "year": 1980,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 20,
+    "name": "Red ball with a bow",
+    "count": 8,
+    "year": 1950,
+    "shape": "ball",
+    "color": "red",
+    "size": "medium",
+    "favorite": true
+  },
+  {
+    "num": 21,
+    "name": "Red ball with stars",
+    "count": 4,
+    "year": 1970,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": true
+  },
+  {
+    "num": 22,
+    "name": "The pine cone is gold",
+    "count": 11,
+    "year": 1990,
+    "shape": "cone",
+    "color": "yellow",
+    "size": "small",
+    "favorite": false
+  },
+  {
+    "num": 23,
+    "name": "Bell vintage",
+    "count": 9,
+    "year": 1950,
+    "shape": "bell",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 24,
+    "name": "Snowflake is elegant",
+    "count": 1,
+    "year": 1940,
+    "shape": "snowflake",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 25,
+    "name": "Pink ball with sequins",
+    "count": 12,
+    "year": 2010,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 26,
+    "name": "Ruby-gold ball",
+    "count": 8,
+    "year": 1960,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 27,
+    "name": "Red ball with a pattern",
+    "count": 4,
+    "year": 2010,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 28,
+    "name": "Burgundy ball with a pattern",
+    "count": 10,
+    "year": 2010,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 29,
+    "name": "Vintage ball with flowers",
+    "count": 5,
+    "year": 1950,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": true
+  },
+  {
+    "num": 30,
+    "name": "Vintage ball with a pattern",
+    "count": 8,
+    "year": 1950,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": true
+  },
+  {
+    "num": 31,
+    "name": "Red ball with sequins",
+    "count": 8,
+    "year": 2010,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 32,
+    "name": "Blue ball universe",
+    "count": 11,
+    "year": 1970,
+    "shape": "ball",
+    "color": "blue",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 33,
+    "name": "Blue ball with snowflake",
+    "count": 6,
+    "year": 2010,
+    "shape": "ball",
+    "color": "blue",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 34,
+    "name": "Green ball with a pattern",
+    "count": 8,
+    "year": 2010,
+    "shape": "ball",
+    "color": "green",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 35,
+    "name": "Figure a fox in a scarf",
+    "count": 8,
+    "year": 1950,
+    "shape": "figure",
+    "color": "yellow",
+    "size": "medium",
+    "favorite": true
+  },
+  {
+    "num": 36,
+    "name": "Lilac ball Blizzard",
+    "count": 1,
+    "year": 2000,
+    "shape": "ball",
+    "color": "blue",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 37,
+    "name": "Green ball Blizzard",
+    "count": 6,
+    "year": 2000,
+    "shape": "ball",
+    "color": "green",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 38,
+    "name": "Blue ball Blizzard",
+    "count": 6,
+    "year": 2000,
+    "shape": "ball",
+    "color": "blue",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 39,
+    "name": "Snowflake is red",
+    "count": 6,
+    "year": 1990,
+    "shape": "snowflake",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 40,
+    "name": "Snowflake is gold",
+    "count": 12,
+    "year": 2020,
+    "shape": "snowflake",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 41,
+    "name": "Snowflake is arctic",
+    "count": 11,
+    "year": 2020,
+    "shape": "snowflake",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 42,
+    "name": "Green ball",
+    "count": 10,
+    "year": 1980,
+    "shape": "ball",
+    "color": "green",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 43,
+    "name": "Snowflake two-tone",
+    "count": 6,
+    "year": 1960,
+    "shape": "snowflake",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 44,
+    "name": "Figure angel's",
+    "count": 11,
+    "year": 1940,
+    "shape": "figure",
+    "color": "red",
+    "size": "medium",
+    "favorite": true
+  },
+  {
+    "num": 45,
+    "name": "Christmas snowflake",
+    "count": 1,
+    "year": 1980,
+    "shape": "snowflake",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 46,
+    "name": "Figure fly agaric",
+    "count": 10,
+    "year": 1950,
+    "shape": "figure",
+    "color": "red",
+    "size": "small",
+    "favorite": false
+  },
+  {
+    "num": 47,
+    "name": "Figure well",
+    "count": 6,
+    "year": 1950,
+    "shape": "figure",
+    "color": "red",
+    "size": "small",
+    "favorite": false
+  },
+  {
+    "num": 48,
+    "name": "Yellow ball with a bow",
+    "count": 6,
+    "year": 1960,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 49,
+    "name": "Snowflake with turquoise",
+    "count": 4,
+    "year": 1980,
+    "shape": "snowflake",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 50,
+    "name": "Big bell",
+    "count": 3,
+    "year": 2020,
+    "shape": "bell",
+    "color": "red",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 51,
+    "name": "Cone with frost",
+    "count": 12,
+    "year": 1970,
+    "shape": "cone",
+    "color": "red",
+    "size": "small",
+    "favorite": false
+  },
+  {
+    "num": 52,
+    "name": "Red ball with the inscription",
+    "count": 12,
+    "year": 1990,
+    "shape": "ball",
+    "color": "red",
+    "size": "big",
+    "favorite": true
+  },
+  {
+    "num": 53,
+    "name": "Snowflake silver",
+    "count": 6,
+    "year": 2020,
+    "shape": "snowflake",
+    "color": "white",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 54,
+    "name": "Green ball with a pattern",
+    "count": 6,
+    "year": 2010,
+    "shape": "ball",
+    "color": "green",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 55,
+    "name": "Gingerbread house",
+    "count": 1,
+    "year": 1940,
+    "shape": "figure",
+    "color": "yellow",
+    "size": "big",
+    "favorite": false
+  },
+  {
+    "num": 56,
+    "name": "Gingerbread house",
+    "count": 1,
+    "year": 1940,
+    "shape": "figure",
+    "color": "yellow",
+    "size": "small",
+    "favorite": false
+  },
+  {
+    "num": 57,
+    "name": "Gingerbread house",
+    "count": 1,
+    "year": 1940,
+    "shape": "figure",
+    "color": "yellow",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 58,
+    "name": "Figure of a polar bear",
+    "count": 2,
+    "year": 1980,
+    "shape": "figure",
+    "color": "white",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 59,
+    "name": "Yellow ball with the inscription",
+    "count": 10,
+    "year": 1990,
+    "shape": "ball",
+    "color": "yellow",
+    "size": "medium",
+    "favorite": false
+  },
+  {
+    "num": 60,
+    "name": "Figure pigeon",
+    "count": 12,
+    "year": 1940,
+    "shape": "figure",
+    "color": "white",
+    "size": "medium",
+    "favorite": true
+  }
+]
