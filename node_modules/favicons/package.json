@@ -1,0 +1,88 @@
+{
+  "name": "favicons",
+  "version": "6.2.2",
+  "description": "Favicon generator for Node.js",
+  "main": "dist/index.js",
+  "files": [
+    "dist/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/itgalaxy/favicons.git"
+  },
+  "scripts": {
+    "fmt": "prettier --write .",
+    "fmt-check": "prettier --check .",
+    "lint": "eslint . --ignore-path .gitignore",
+    "fix": "npm run lint -- --fix && npm run fmt",
+    "pretest": "npm run lint && npm run fmt-check",
+    "test-only": "ava",
+    "test": "npm run test-only",
+    "coverage": "nyc npm test",
+    "prepare": "gulp"
+  },
+  "ava": {
+    "require": [
+      "@babel/register"
+    ],
+    "files": [
+      "test/**/*.test.js",
+      "test/*.test.js"
+    ],
+    "timeout": "2m"
+  },
+  "keywords": [
+    "favicon",
+    "ico",
+    "generator",
+    "node",
+    "realfavicongenerator",
+    "gulpfriendly"
+  ],
+  "author": "Hayden Bleasel <haydenbleasel@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/itgalaxy/favicons/issues"
+  },
+  "homepage": "https://github.com/itgalaxy/favicons",
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "dependencies": {
+    "clone": "^2.1.2",
+    "colors": "^1.4.0",
+    "image-size": "^0.8.3",
+    "jimp": "^0.16.1",
+    "jsontoxml": "^1.0.1",
+    "lodash.defaultsdeep": "^4.6.1",
+    "require-directory": "^2.1.1",
+    "sharp": "^0.28.2",
+    "through2": "^4.0.2",
+    "tinycolor2": "^1.4.2",
+    "to-ico": "^1.1.5",
+    "vinyl": "^2.2.1",
+    "xml2js": "^0.4.23"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.0",
+    "@babel/preset-env": "^7.14.1",
+    "@babel/register": "^7.13.16",
+    "ava": "^3.15.0",
+    "babel-plugin-istanbul": "^6.0.0",
+    "concordance-comparator": "^0.1.0",
+    "del": "^6.0.0",
+    "dir-compare": "^3.2.0",
+    "eslint": "^7.20.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "fibers": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-eslint": "^6.0.0",
+    "icojs": "^0.15.1",
+    "nyc": "^15.1.0",
+    "pixelmatch": "^5.2.1",
+    "prettier": "^2.3.0",
+    "resemblejs": "^3.2.5"
+  }
+}

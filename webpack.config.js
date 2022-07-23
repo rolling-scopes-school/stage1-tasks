@@ -1,6 +1,7 @@
 const path = require('path')
 const htmlWPPlugin = require('html-webpack-plugin')
 const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 module.exports = {
     context: path.resolve(__dirname, ''),
@@ -17,6 +18,7 @@ module.exports = {
             template: "./src/index.html"
         }),
         new CleanWebpackPlugin(),
+        new FaviconsWebpackPlugin('./src/assets/favicon.ico'),
     ],
     module: {
         rules: [
