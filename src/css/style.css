@@ -16,7 +16,11 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+  background-image: url("../assets/img/bg.jpg");
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
 }
