@@ -9975,6 +9975,38 @@ class BackgroundChanger {
 
 /***/ }),
 
+/***/ "./src/js/QOfDay.js":
+/*!**************************!*\
+  !*** ./src/js/QOfDay.js ***!
+  \**************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ QOfDay)
+/* harmony export */ });
+/* harmony import */ var _assets_data_json__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../assets/data.json */ "./src/assets/data.json");
+
+
+class QOfDay {
+
+    constructor() {
+        QOfDay.setNewQ()
+        document.querySelector('button.change-quote').onclick = () => QOfDay.setNewQ()
+    }
+
+    static setNewQ() {
+        let rnd = Math.round(Math.random() * 99)
+        console.log(_assets_data_json__WEBPACK_IMPORTED_MODULE_0__)
+        console.log(_assets_data_json__WEBPACK_IMPORTED_MODULE_0__[rnd])
+        document.querySelector('.quote').textContent = _assets_data_json__WEBPACK_IMPORTED_MODULE_0__[rnd]["text"]
+        document.querySelector('.author').textContent = _assets_data_json__WEBPACK_IMPORTED_MODULE_0__[rnd]["author"]
+    }
+}
+
+/***/ }),
+
 /***/ "./src/js/TimeDateAndHello.js":
 /*!************************************!*\
   !*** ./src/js/TimeDateAndHello.js ***!
@@ -10030,11 +10062,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Weather)
 /* harmony export */ });
+var langInApp = 'en'
+
 class Weather {
 
-    static langInApp
-
-    constructor(lang) {
+    constructor() {
         document.querySelector('input.city').addEventListener('keydown', (e) => {
             if (e.keyCode === 13) {
                 Weather.getWeather(document.querySelector('input.city').value, Weather.langInApp)
@@ -10043,7 +10075,9 @@ class Weather {
     }
 
     static async getWeather(city, lang) {
-        Weather.langInApp = 'en'
+        console.log("getWeather langInApp = ", Weather.langInApp)
+        console.log("getWeather lang = ", lang)
+        Weather.langInApp = lang
         Weather.city = document.querySelector('input.city')
         Weather.weatherIcon = document.querySelector('.weather-icon')
         Weather.temperature = document.querySelector('.temperature')
@@ -10082,6 +10116,70 @@ class Weather {
         }
     }
 }
+
+/***/ }),
+
+/***/ "./src/js/dataSaver.js":
+/*!*****************************!*\
+  !*** ./src/js/dataSaver.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Weather */ "./src/js/Weather.js");
+
+
+var langInApp = null
+
+let isLoaded = false
+window.addEventListener('load', getLocalStorage)
+window.addEventListener('beforeunload', setLocalStorage)
+
+function setLocalStorage() {
+    if (isLoaded) {
+        window.localStorage.setItem('userName', document.querySelector("input.name").value)
+        window.localStorage.setItem('city', document.querySelector("input.city").value)
+        window.localStorage.setItem('langInApp', langInApp)
+    }
+}
+
+function getLocalStorage() {
+    if(window.localStorage.getItem('userName') != undefined) {
+        document.querySelector("input.name").value = window.localStorage.getItem('userName')
+    }
+
+    let city = window.localStorage.getItem('city')
+    if (city) {
+        document.querySelector("input.city").value = city
+    } else {
+        document.querySelector("input.city").value = 'Minsk'
+    }
+
+    let langRes = window.localStorage.getItem('langInApp')
+    if (langRes) {
+        langInApp = langRes
+    } else {
+        langInApp = 'en'
+    }
+    console.log("getLocalStorage langInApp = ", langInApp)
+    _Weather__WEBPACK_IMPORTED_MODULE_0__["default"].langInApp = langInApp
+    console.log("getLocalStorage Weather.langInApp = ", _Weather__WEBPACK_IMPORTED_MODULE_0__["default"].langInApp)
+    _Weather__WEBPACK_IMPORTED_MODULE_0__["default"].getWeather(document.querySelector("input.city").value, langInApp)
+
+    isLoaded = true
+}
+
+/***/ }),
+
+/***/ "./src/assets/data.json":
+/*!******************************!*\
+  !*** ./src/assets/data.json ***!
+  \******************************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = JSON.parse('[{"text":"Программирование сегодня — это гонка разработчиков программ, стремящихся писать программы с большей и лучшей идиотоустойчивостью, и вселенной, которая пытается создать больше отборных идиотов. Пока вселенная побеждает.","author":"Rick Cook"},{"text":"Низкоуровневый язык — это когда требуется внимание к вещам, которые никак не связаны с программами на этом языке.","author":"Alan J. Perlis"},{"text":"Программирование на С похоже на быстрые танцы на только что отполированном полу людей с острыми бритвами в руках.","author":"Waldi Ravens"},{"text":"Не волнуйтесь, если что-то не работает. Если бы всё работало, вас бы уволили.","author":"Mosher’s Law of Software Engineering"},{"text":"Для меня долгое время было загадкой, как что-то очень дорогое и технологичное может быть столь бесполезным. И вскоре я осознал, что компьютер — это глупая машина, обладающая способностями выполнять невероятно умные вещи, тогда как программисты — это умные люди, у которых талант делать невероятные глупости. Короче, они нашли друг друга.","author":"Bill Bryson"},{"text":"В хорошем дизайне добавление чего-то стоит дешевле, чем сама эта вещь.","author":"Thomas C. Gale"},{"text":"В теории, теория и практика неразделимы. На практике это не так.","author":"Yoggi Berra"},{"text":"Perl — это тот язык, который одинаково выглядит как до, так и после RSA шифрования.","author":"Keith Bostic"},{"text":"Я изобрел понятие «объектно-ориентированный», и могу заявить, что не имел в виду C++.","author":"Alan Kay"},{"text":"Иногда лучше остаться спать дома в понедельник, чем провести всю неделю в отладке написанного в понедельник кода.","author":"Christopher Thompson"},{"text":"Измерять продуктивность программиста подсчетом строк кода — это так же, как оценивать постройку самолета по его весу.","author":"Bill Gates"},{"text":"Отладка кода вдвое сложнее, чем его написание. Так что если вы пишете код настолько умно, насколько можете, то вы по определению недостаточно сообразительны, чтобы его отлаживать.","author":"Brian W. Kernighan"},{"text":"Многие из вас знакомы с достоинствами программиста. Их всего три, и разумеется это: лень, нетерпеливость и гордыня.","author":"Larry Wall"},{"text":"Большинство программ на сегодняшний день подобны египетским пирамидам из миллиона кирпичиков друг на друге и без конструктивной целостности — они просто построены грубой силой и тысячами рабов.","author":"Alan Kay"},{"text":"Большинство хороших программистов делают свою работу не потому, что ожидают оплаты или признания, а потому что получают удовольствие от программирования.","author":"Linus Torvalds"},{"text":"Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.","author":"Martin Golding"},{"text":"Программы должны писаться для людей, которые будут их читать, а машины, которые будут эти программы исполнять — второстепенны.","author":"Harold Abelson"},{"text":"Люди, которые думают, что ненавидят компьютеры, на самом деле ненавидят плохих программистов.","author":"Larry Niven"},{"text":"Если вы дадите человеку программу, то займете его на один день. Если вы научите человека программировать, то займете его на всю жизнь.","author":"Waseem Latif"},{"text":"Язык, который не меняет вашего представления о программировании, недостоин изучения.","author":"Alan J. Perlis"},{"text":"Мы наблюдаем общество, которое все больше зависит от машин, но при этом использует их все неэффективнее.","author":"Douglas Rushkoff"},{"text":"Иногда лучшие программы создаются на бумажке. Запрограммировать их — второстепенная вещь.","author":"Max Kanat-Alexander"},{"text":"Отладка кода — это как охота. Охота на баги.","author":"Amit Kalantri"},{"text":"Любой дурак сможет написать код, который поймет машина. Хорошие программисты пишут код, который сможет понять человек.","author":"Martin Fowler"},{"text":"Программирование — это разбиение чего-то большого и невозможного на что-то маленькое и вполне реальное.","author":"Jazzwant"},{"text":"Программисты — не математики, как бы нам этого ни хотелось.","author":"Richard P. Gabriel"},{"text":"Программирование — это сложно. Основные правила, на которых все строится, очень просты, но по мере разработки программа сама начинает вводить свои правила и законы. Таким образом, программист строит лабиринт, в котором сам же может и потеряться.","author":"Marijn Haverbeke"},{"text":"Функции, которые производят значения, легче комбинировать новыми способами, чем те, которые производят сайд-эффекты.","author":"Marijn Haverbeke"},{"text":"Простота — залог надежности.","author":"Edsger W. Dijkstra"},{"text":"Если вы хотите, чтобы код было легко и быстро писать — делайте его удобным для чтения.","author":"Robert C. Martin"},{"text":"Если вы хорошо отлаживаете программы, значит, вы провели много времени, делая это. Я не хочу уметь хорошо отлаживать программы.","author":"Michael C. Feathers"},{"text":"Работает? Не трогай.","author":"Любой программист"},{"text":"При помощи C вы легко можете выстрелить себе в ногу. При помощи C++ это сделать сложнее, но если это произойдёт, вам оторвёт всю ногу целиком.","author":"Bjarne Stroustrup"},{"text":"Последние нововведения в C++ были созданы, чтобы исправить предыдущие нововведения.","author":"David Jameson"},{"text":"Java — это C++, из которого убрали все пистолеты, ножи и дубинки.","author":"James Gosling"},{"text":"Если бы в Java действительно работала сборка мусора, большинство программ бы удаляли сами себя при первом же запуске.","author":"Robert Sewell"},{"text":"Есть всего два типа языков программирования: те, на которые люди всё время ругаются, и те, которые никто не использует.","author":"Bjarne Stroustrup"},{"text":"Плохое имя метода сродни предвыборным обещаниям политиков. Вроде о чем-то оно говорит, но если задуматься — непонятно о чем.","author":"C. MacConnell"},{"text":"Неработающая программа обычно приносит меньше вреда, чем работающая плохо.","author":"Dave Thomas"},{"text":"Насколько проще было бы писать программы, если бы не заказчики.","author":"R. S. Martin"},{"text":"Молодые специалисты не умеют работать, а опытные специалисты умеют не работать.","author":"Alexander Golov"},{"text":"Почаще задавайте себе вопрос «Что мне скрыть?» и вы удивитесь, сколько проблем проектирования растает на ваших глазах.","author":"C. MacConnell"},{"text":"Преждевременная оптимизация — корень всех зол.","author":"Donald Knuth"},{"text":"Чтобы написать чистый код, мы сначала пишем грязный код, а затем рефакторим его.","author":"Robert Martin"},{"text":"Помимо математических способностей, жизненно важным качеством программиста является исключительно хорошее владение родным языком.","author":"Edsger W. Dijkstra"},{"text":"Для каждой сложной задачи существует решение, которое является быстрым, простым и неправильным.","author":"H. L. Mencken"},{"text":"Механизмы управления доступом в С++ обеспечивают защиту от несчастного случая, но не от мошенников.","author":"Bjarne Stroustrup"},{"text":"Механизмы управления доступом в С++ обеспечивают защиту от несчастного случая, но не от мошенников.","author":"Bjarne Stroustrup"},{"text":"Думаю, искусство программировать немногим сложнее других человеческих навыков. Программирование делает вас лучше точно так же, как вам помогают развиваться изучение иностранного языка, математики или чтение книг.","author":"Jack Dorsey"},{"text":"Аналогично тому, как написание картины является искусством для души, так и написание программы является искусством для разума.","author":"Volnik"},{"text":"Тестирование не позволяет обнаружить такие ошибки, как создание не того приложения.","author":"Steve McConnell"},{"text":"Некоторые люди во время решения некой проблемы думают: «Почему бы мне не использовать регулярные выражения?». После этого у них уже две проблемы…","author":"Jamie Zawinski"},{"text":"Я не умею делать скриншоты, потому что я обычно работаю на компьютере в текстовом режиме.","author":"Richard Stallman"},{"text":"Ходить по воде и разрабатывать программы, следуя спецификации, очень просто… если они заморожены.","author":"Edward V Berard"},{"text":"Я думаю, что Microsoft назвал технологию .NET для того, чтобы она не показывалась в списках директорий Unix.","author":"Oktal"},{"text":"Учитывая текущее плачевное состояние наших программ, можно сказать, что программирование определенно всё ещё черная магия, и пока мы не можем называть его технической дисциплиной.","author":"Bill Clinton"},{"text":"Намного легче портировать шелл, чем скрипт на шелле.","author":"Larry Wall"},{"text":"Изучение программирования имеет такое же отношение к проектированию интерактивных систем, как обучение слепой печати к написанию стихов.","author":"Ted Nelson"},{"text":"Сначала учите науку программирования и всю теорию. Далее выработайте свой программистский стиль. Затем забудьте всё и просто программируйте.","author":"George Carrette"},{"text":"Трудность работы с программистом заключается в том, что вы не можете понять, что он делает, до тех пор, пока не стало слишком поздно.","author":"Seymour Cray"},{"text":"Меня два раза спрашивали [члены Парламента]: «Скажите на милость, мистер Бэббидж, что случится, если вы введёте в машину неверные цифры? Cможем ли мы получить правильный ответ?» Я не могу себе даже представить, какая путаница в голове может привести к подобному вопросу.","author":"Charles Babbage"},{"text":"С имеет мощь ассемблера и удобство… ассемблера.","author":"Dennis Ritchie"},{"text":"UNIX невероятно прост, но нужно быть гением, чтобы понять эту простоту.","author":"Dennis Ritchie"},{"text":"Нельзя доверять коду, который вы не написали полностью сами.","author":"Ken Thompson"},{"text":"Ограничение возможностей языка с целью предотвращения программистских ошибок в лучшем случае опасно.","author":"Bjarne Stroustrup"},{"text":"Если вы считаете, что С++ труден, попытайтесь выучить английский.","author":"Bjarne Stroustrup"},{"text":"Что бы нового мы ни создавали, мы должны дать людям возможность переходить от старых инструментов и идей к новым.","author":"Bjarne Stroustrup"},{"text":"Небольшие программы случайно компилируются и выполняются правильно при первой же попытке. Но если это происходит с любой не тривиальной программой, то это очень и очень подозрительно.","author":"Bjarne Stroustrup"},{"text":"Модульность — фундаментальный аспект всех успешно работающих крупных систем.","author":"Bjarne Stroustrup"},{"text":"Доказательство с помощью аналогий — это обман.","author":"Bjarne Stroustrup"},{"text":"Программа, которая не тестировалась, не является рабочей.","author":"Bjarne Stroustrup"},{"text":"Программирование — это не наука, а ремесло.","author":"Richard Stallman"},{"text":"Люди думают, что безопасность — это существительное, что-то, что можно купить. На самом же деле безопасность — это абстрактное понятие, как счастье.","author":"James Gosling"},{"text":"Если бы меня попросили выбрать какой-нибудь современный язык на замену Java, я бы выбрал Scala.","author":"James Gosling"},{"text":"Проблема С++ в том, что необходимо узнать всё о нём перед тем, как начать писать на нём все что угодно.","author":"Larry Wall"},{"text":"Дизайн языка программирования — это как прогулка по парку. Парку Юрского Периода.","author":"Larry Wall"},{"text":"Думаю, это будет новой фичей. Только не говорите никому, что она возникла случайно.","author":"Larry Wall"},{"text":"Тяжело улучшать код, который до этого уже улучшали много раз.","author":"Larry Wall"},{"text":"Лень — главное достоинство программиста.","author":"Larry Wall"},{"text":"Чтобы понять алгоритм, нужно его увидеть.","author":"Donald Knuth"},{"text":"У меня предчувствие, что неизвестные цепочки ДНК расшифруются в копирайты и патенты.","author":"Donald Knuth"},{"text":"Если вы наслаждаетесь используемыми инструментами, то работа будет выполнена успешно.","author":"Donald Knuth"},{"text":"Помните, что обычно есть решение проще и быстрее того, что первым приходит вам в голову.","author":"Donald Knuth"},{"text":"Если оптимизировать всё, что можно, то вы будете вечно несчастным.","author":"Donald Knuth"},{"text":"Алгоритм Евклида — дед всех алгоритмов, потому что это старейший нетривиальный алгоритм, доживший до наших дней.","author":"Donald Knuth"},{"text":"Легче изобрести будущее, чем предсказать его.","author":"Alan Kay"},{"text":"Программированию обычно учат на примерах.","author":"Niklaus Wirth"},{"text":"Программы становятся медленнее быстрее, чем «железо» становится быстрее.","author":"Niklaus Wirth"},{"text":"Я называю это моей ошибкой на миллиард. Изобретение нулевого указателя (null — прим. ред.) в 1965.","author":"Tony Hoare"},{"text":"Некоторые проблемы лучше не решать, а избегать.","author":"Tony Hoare"},{"text":"Одно аккуратное измерение стоит тысячи мнений экспертов.","author":"Grace Hopper"},{"text":"У людей аллергия на перемены.","author":"Grace Hopper"},{"text":"Мы не можем перекладывать свои ошибки на используемые технологии.","author":"Tim Berners-Lee"},{"text":"Лень — естественное состояние программиста, после которого он рождает хороший алгоритм.","author":"Народное творчество"},{"text":"Магия перестаёт существовать после того, как вы понимаете, как она работает.","author":"Tim Berners-Lee"},{"text":"Программирование — это как бить себя по лицу: рано или поздно ваш нос будет кровоточить.","author":"Kyle Woodbury"},{"text":"Способ использования интеллекта важнее, чем его уровень.","author":"C. MacConnell"},{"text":"Компьютер позволяет нам совершать ошибки гораздо быстрее, чем любые другие изобретения человечества, за исключением, пожалуй, текилы и оружия.","author":"Mitch Radcliffe"},{"text":"Основная проблема программистов состоит в том, что их ошибки невозможно предугадать.","author":"Seymour Cray"},{"text":"Два самых известных продукта, созданных в Университете Беркли — это UNIX и LSD. Это не может быть просто совпадением.","author":"Jeremy S. Anderson"}]');
 
 /***/ })
 
@@ -10175,18 +10273,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _TimeDateAndHello__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TimeDateAndHello */ "./src/js/TimeDateAndHello.js");
 /* harmony import */ var _BackgroundChanger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BackgroundChanger */ "./src/js/BackgroundChanger.js");
 /* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./Weather */ "./src/js/Weather.js");
+/* harmony import */ var _QOfDay__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./QOfDay */ "./src/js/QOfDay.js");
+/* harmony import */ var _dataSaver__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dataSaver */ "./src/js/dataSaver.js");
 
 
 
 
 
 
+
+
+
+var langInApp = null
 
 new _TimeDateAndHello__WEBPACK_IMPORTED_MODULE_2__["default"]()
 new _BackgroundChanger__WEBPACK_IMPORTED_MODULE_3__["default"]()
-new _Weather__WEBPACK_IMPORTED_MODULE_4__["default"]('en')
-
-document.querySelector('button.change-quote').onclick = () => location.reload(true)
+new _Weather__WEBPACK_IMPORTED_MODULE_4__["default"]()
+new _QOfDay__WEBPACK_IMPORTED_MODULE_5__["default"]()
 })();
 
 /******/ })()

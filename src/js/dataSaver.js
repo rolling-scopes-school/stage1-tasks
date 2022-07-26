@@ -1,10 +1,10 @@
 import Weather from './Weather'
 
+var langInApp = null
+
 let isLoaded = false
 window.addEventListener('load', getLocalStorage)
 window.addEventListener('beforeunload', setLocalStorage)
-
-let langInApp = null
 
 function setLocalStorage() {
     if (isLoaded) {
@@ -32,7 +32,9 @@ function getLocalStorage() {
     } else {
         langInApp = 'en'
     }
+    console.log("getLocalStorage langInApp = ", langInApp)
     Weather.langInApp = langInApp
+    console.log("getLocalStorage Weather.langInApp = ", Weather.langInApp)
     Weather.getWeather(document.querySelector("input.city").value, langInApp)
 
     isLoaded = true

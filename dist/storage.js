@@ -12,11 +12,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (/* binding */ Weather)
 /* harmony export */ });
+var langInApp = 'en'
+
 class Weather {
 
-    static langInApp
-
-    constructor(lang) {
+    constructor() {
         document.querySelector('input.city').addEventListener('keydown', (e) => {
             if (e.keyCode === 13) {
                 Weather.getWeather(document.querySelector('input.city').value, Weather.langInApp)
@@ -25,7 +25,9 @@ class Weather {
     }
 
     static async getWeather(city, lang) {
-        Weather.langInApp = 'en'
+        console.log("getWeather langInApp = ", Weather.langInApp)
+        console.log("getWeather lang = ", lang)
+        Weather.langInApp = lang
         Weather.city = document.querySelector('input.city')
         Weather.weatherIcon = document.querySelector('.weather-icon')
         Weather.temperature = document.querySelector('.temperature')
@@ -133,11 +135,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Weather__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Weather */ "./src/js/Weather.js");
 
 
+var langInApp = null
+
 let isLoaded = false
 window.addEventListener('load', getLocalStorage)
 window.addEventListener('beforeunload', setLocalStorage)
-
-let langInApp = null
 
 function setLocalStorage() {
     if (isLoaded) {
@@ -165,7 +167,9 @@ function getLocalStorage() {
     } else {
         langInApp = 'en'
     }
+    console.log("getLocalStorage langInApp = ", langInApp)
     _Weather__WEBPACK_IMPORTED_MODULE_0__["default"].langInApp = langInApp
+    console.log("getLocalStorage Weather.langInApp = ", _Weather__WEBPACK_IMPORTED_MODULE_0__["default"].langInApp)
     _Weather__WEBPACK_IMPORTED_MODULE_0__["default"].getWeather(document.querySelector("input.city").value, langInApp)
 
     isLoaded = true

@@ -4,9 +4,12 @@ import '../css/style.css'
 import TimeDateAndHello from './TimeDateAndHello'
 import BackgroundChanger from './BackgroundChanger'
 import Weather from './Weather'
+import QOfDay from './QOfDay'
+import dataSaver from './dataSaver'
+
+var langInApp = null
 
 new TimeDateAndHello()
 new BackgroundChanger()
-new Weather('en')
-
-document.querySelector('button.change-quote').onclick = () => location.reload(true)
+new Weather()
+new QOfDay()

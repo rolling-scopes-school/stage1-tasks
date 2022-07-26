@@ -1,8 +1,8 @@
+var langInApp = 'en'
+
 export default class Weather {
 
-    static langInApp
-
-    constructor(lang) {
+    constructor() {
         document.querySelector('input.city').addEventListener('keydown', (e) => {
             if (e.keyCode === 13) {
                 Weather.getWeather(document.querySelector('input.city').value, Weather.langInApp)
@@ -11,7 +11,9 @@ export default class Weather {
     }
 
     static async getWeather(city, lang) {
-        Weather.langInApp = 'en'
+        console.log("getWeather langInApp = ", Weather.langInApp)
+        console.log("getWeather lang = ", lang)
+        Weather.langInApp = lang
         Weather.city = document.querySelector('input.city')
         Weather.weatherIcon = document.querySelector('.weather-icon')
         Weather.temperature = document.querySelector('.temperature')
