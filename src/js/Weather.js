@@ -1,19 +1,16 @@
-var langInApp = 'en'
+import getLang from './dataSaver'
 
 export default class Weather {
 
     constructor() {
         document.querySelector('input.city').addEventListener('keydown', (e) => {
             if (e.keyCode === 13) {
-                Weather.getWeather(document.querySelector('input.city').value, Weather.langInApp)
+                Weather.getWeather(document.querySelector('input.city').value)
             }
         });
     }
 
-    static async getWeather(city, lang) {
-        console.log("getWeather langInApp = ", Weather.langInApp)
-        console.log("getWeather lang = ", lang)
-        Weather.langInApp = lang
+    static async getWeather(city) {
         Weather.city = document.querySelector('input.city')
         Weather.weatherIcon = document.querySelector('.weather-icon')
         Weather.temperature = document.querySelector('.temperature')
@@ -21,6 +18,7 @@ export default class Weather {
         Weather.wind = document.querySelector('.wind')
         Weather.humidity = document.querySelector('.humidity')
         Weather.weatherError = document.querySelector('.weather-error')
+        let lang = getLang()
 
         try {
             const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&lang=${lang}&appid=4dd926d8428c8f4eba2fa99faf125bf1&units=metric`;

@@ -1,3 +1,5 @@
+import getLang from './dataSaver'
+
 export default class TimeDateAndHello {
 
     constructor(){
@@ -15,7 +17,23 @@ export default class TimeDateAndHello {
         );
 
         let getTimeOfDayArrowFun = () => TimeDateAndHello.getTimeOfDay()
-        document.querySelector(".greeting").textContent = `Good ${getTimeOfDayArrowFun()}`
+        if (getLang() == 'en')  {
+            document.querySelector(".greeting").textContent = `Good ${getTimeOfDayArrowFun()}`
+        } else {
+            switch (getTimeOfDayArrowFun()) {
+                case "night":
+                    document.querySelector(".greeting").textContent = "Доброй ночи,"
+                break
+                case "morning":
+                    document.querySelector(".greeting").textContent = "Доброе утро,"
+                break
+                case "afternoon":
+                    document.querySelector(".greeting").textContent = "Добрый день,"
+                break
+                default:
+                    document.querySelector(".greeting").textContent = "Добрый вечер,"
+            }
+        }
 
         setTimeout(() => this.showTime(), 1000)
     }

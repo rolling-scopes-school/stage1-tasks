@@ -23,7 +23,7 @@ const optimization = () => {
     }
 }
 
-const filename = ext => isDev ? `[name].${ext}` : `[hash].${ext}`
+const filename = ext => isDev ? `[name].${ext}` : `[name]_[hash].${ext}`
 
 const cssLoaders = extra => {
     const loaders = [
