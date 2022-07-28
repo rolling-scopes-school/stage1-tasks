@@ -47,6 +47,7 @@ export default class AudioPlayer {
             li.textContent = file.name
             let num = files.indexOf(file)
             li.onclick = () => {
+                this.currentFileNum = num
                 this.resetPosition()
                 this.playAudio(num)
             }
