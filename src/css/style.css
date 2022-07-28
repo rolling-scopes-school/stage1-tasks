@@ -40,7 +40,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 120px;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
 }
 
 .play-list {
@@ -287,4 +287,23 @@ body {
     font-size: 32px;
     padding: 5px;
   }
+}
+
+.time-line {
+  display: flex;
+  height: 6px;
+  width: 180px;
+  border-radius: 3px;
+  background-color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 16px;
+  z-index: 2;
+}
+
+.all-time-line {
+  display: flex;
+  height: 6px;
+  align-self: center;
+  border-radius: 3px;
+  background-color: rgb(255, 255, 255);
+  z-index: 1;
 }

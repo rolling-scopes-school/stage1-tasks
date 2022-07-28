@@ -55,7 +55,8 @@ module.exports = {
     optimization: optimization(),
     devServer: {
         port: 8088,
-        hot: isDev
+        hot: isDev,
+        historyApiFallback: true
     },
     devtool: isDev ? 'source-map' : false,
     plugins: [
