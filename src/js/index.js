@@ -5,8 +5,10 @@ import TimeDateAndHello from './TimeDateAndHello'
 import BackgroundChanger from './BackgroundChanger'
 import Weather from './Weather'
 import QOfDay from './QOfDay'
+import AudioPlayer from './AudioPlayer'
 
 new TimeDateAndHello()
 new BackgroundChanger()
 new Weather()
 new QOfDay()
+new AudioPlayer()
