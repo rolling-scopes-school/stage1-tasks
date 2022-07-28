@@ -38,9 +38,16 @@ export default class Weather {
             let humidityText = lang == 'en' ? "Humidity: " : "Влажность: "
             Weather.humidity.textContent = humidityText + Weather.data.main.humidity + "%"
         } catch (e) {
-            Weather.weatherError.textContent = lang == 'en'
-                ? `Error! city not found for '${city}'!`
-                : `Ошибка! город '${city}' - не найден!`
+            if (e.message.includes("undefined")) {
+                Weather.weatherError.textContent = lang == 'en'
+                    ? `Error! city not found for '${city}'!`
+                    : `Ошибка! город '${city}' - не найден!`
+            } else {
+                Weather.weatherError.textContent = lang == 'en'
+                    ? `Connection Error'!`
+                    : `Ошибка подключения!`
+            }
+            
 
             Weather.weatherIcon.classList.remove(Weather.weatherIcon.classList[2])
             Weather.temperature.textContent = ''
