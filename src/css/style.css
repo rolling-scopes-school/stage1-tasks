@@ -307,3 +307,51 @@ body {
   background-color: rgb(255, 255, 255);
   z-index: 1;
 }
+
+.mute-icon {
+  background-image: url("../assets/svg/mute.svg") !important;
+}
+
+.vol-controls {
+  left: 164px;
+  width: 32px;
+  display: flex;
+  justify-self: flex-start;
+  align-items: stretch;
+  position: fixed;
+  z-index: 10;
+  transition: width 0.5s;
+}
+
+.vol-mute {
+  background-image: url("../assets/svg/vol.svg");
+  background-repeat: no-repeat;
+  justify-self: flex-start;
+  min-width: 32px;
+  height: 32px;
+  z-index: 2;
+}
+
+.vol-controls:hover {
+  width: 132px !important;
+}
+
+.vol-line-block {
+  margin-left: 8px;
+  justify-self: flex-start;
+  align-self: center;
+  width: 200px;
+  height: 8px;
+  z-index: 1;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  z-index: 3;
+}
+
+.vol-line {
+  z-index: 2;
+  height: 100%;
+  width: 0%;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+}

@@ -28,6 +28,7 @@ export default class AudioPlayer {
             this.playPrev()
         }
 
+        //timeline
         this.timesetter = document.querySelector('.time-line')
         this.timesetter.addEventListener("click", e => {
             const timelineWidth = window.getComputedStyle(this.timesetter).width;
@@ -52,6 +53,29 @@ export default class AudioPlayer {
                 this.playAudio(num)
             }
             this.playList.append(li)
+        }
+        this.renewVol()
+
+        //vol
+        this.wasVol = 1.0
+
+        this.volControl = document.querySelector('.vol-line-block')
+        this.volControl.addEventListener("click", e => {
+            const volWidth = window.getComputedStyle(this.volControl).width;
+            const newVol = (e.offsetX) / parseInt(volWidth) * 1;
+            this.setVol(newVol <= 0.1 ? 0 : newVol >= 0.9 ? 1 : newVol)
+        }, false);
+
+        this.volButton = document.querySelector('.vol-mute')
+        this.volButton.onclick = () => {
+            if(this.audio.volume != 0) {
+                this.wasVol = this.audio.volume
+                this.setVol(0.0)
+                console.log(this.wasVol, ' -> ', this.audio.volume)
+            } else {
+                console.log(this.audio.volume, ' -> ', this.wasVol)
+                this.setVol(this.wasVol)
+            }
         }
     }
 
@@ -94,6 +118,7 @@ export default class AudioPlayer {
         this.playList.childNodes[n].classList.add('item-active')
         this.currentFileNum = n
         this.renewTimeline()
+        console.log(this.audio.volume)
     }
     pauseAudio() {
         this.audio.pause()
@@ -107,5 +132,23 @@ export default class AudioPlayer {
             document.querySelector('.all-time-line').style.setProperty('width', pos + '%');
             if (this.isPlay) { this.renewTimeline() }
         } ,500)
+    }
+
+
+    //vol
+    setVol(vol) {
+        this.audio.volume = vol
+        if(vol == 0.0) {
+            this.volButton.classList.add('mute-icon')
+        } else {
+            this.volButton.classList.remove('mute-icon')
+        }
+        this.renewVol()
+    }
+
+
+    renewVol() {
+        let pos = Math.trunc(this.audio.volume * 100)
+        document.querySelector('.vol-line').style.setProperty('width', pos + '%');
     }
 }
