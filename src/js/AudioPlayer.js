@@ -144,8 +144,9 @@ export default class AudioPlayer {
     }
 
     getInTimeForm(timeNum) {
-        let min = Math.trunc(timeNum / 60)
-        let sec = Math.trunc(timeNum % 60)
+        let timeNumSaved = timeNum ? timeNum : 0
+        let min = Math.trunc(timeNumSaved / 60)
+        let sec = Math.trunc(timeNumSaved % 60)
         return this.getZero(min) + ':' + this.getZero(sec)
     }
 
