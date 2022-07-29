@@ -11,6 +11,9 @@ export default class AudioPlayer {
         this.playPrevBtn = document.querySelector('button.play-prev')
         this.playNextBtn = document.querySelector('button.play-next')
         this.timeline = document.querySelector('.all-time-line')
+        this.soundTittle = document.querySelector('.play-title')
+        this.playCurTime = document.querySelector('.play-cur-time')
+        this.playDurTime = document.querySelector('.play-dur-time')
 
         this.playBtn.onclick = () => {
             if(this.isPlay) { 
@@ -33,8 +36,10 @@ export default class AudioPlayer {
         this.timesetter.addEventListener("click", e => {
             const timelineWidth = window.getComputedStyle(this.timesetter).width;
             const timeToSeek = e.offsetX / parseInt(timelineWidth) * this.audio.duration;
-            this.audio.currentTime = timeToSeek;
-            this.renewTimeline()
+            if (this,this.currentFileNum >= 0) {
+                this.audio.currentTime = timeToSeek;
+                this.renewTimeline()
+            }
           }, false);
         
         this.audio.onended = () => { this.playNext() }
@@ -57,7 +62,8 @@ export default class AudioPlayer {
         this.renewVol()
 
         //vol
-        this.wasVol = 1.0
+        this.wasVol = this.audio.volume != 0 ? this.audio.volume : 1
+        this.volButton = document.querySelector('.vol-mute')
 
         this.volControl = document.querySelector('.vol-line-block')
         this.volControl.addEventListener("click", e => {
@@ -66,14 +72,12 @@ export default class AudioPlayer {
             this.setVol(newVol <= 0.1 ? 0 : newVol >= 0.9 ? 1 : newVol)
         }, false);
 
-        this.volButton = document.querySelector('.vol-mute')
+
         this.volButton.onclick = () => {
             if(this.audio.volume != 0) {
                 this.wasVol = this.audio.volume
                 this.setVol(0.0)
-                console.log(this.wasVol, ' -> ', this.audio.volume)
             } else {
-                console.log(this.audio.volume, ' -> ', this.wasVol)
                 this.setVol(this.wasVol)
             }
         }
@@ -81,6 +85,7 @@ export default class AudioPlayer {
 
     resetPosition() {
         this.audio.src = `assets/sounds/src/assets/sounds/${files[this.currentFileNum].filename}`
+        this.setSoundName(files[this.currentFileNum].name)
         this.audio.currentTime = 0
         this.renewTimeline()
         for(let file of this.playList.childNodes) { file.classList.remove('item-active') }
@@ -108,7 +113,10 @@ export default class AudioPlayer {
 
     playAudio(n) {
         let currentTime = this.audio.currentTime
-        if (n == -1) this.audio.src = `assets/sounds/src/assets/sounds/${files[0].filename}`
+        if (n == -1) {
+            this.audio.src = `assets/sounds/src/assets/sounds/${files[0].filename}`
+            this.setSoundName(files[0].name)
+        }
         n = n != -1 ? n : 0
         this.audio.currentTime = currentTime
         this.audio.play()
@@ -118,7 +126,6 @@ export default class AudioPlayer {
         this.playList.childNodes[n].classList.add('item-active')
         this.currentFileNum = n
         this.renewTimeline()
-        console.log(this.audio.volume)
     }
     pauseAudio() {
         this.audio.pause()
@@ -130,9 +137,19 @@ export default class AudioPlayer {
         setTimeout(()=>{
             let pos = Math.trunc(this.audio.currentTime / this.audio.duration * 100)
             document.querySelector('.all-time-line').style.setProperty('width', pos + '%');
+            this.playCurTime.textContent = this.getInTimeForm(this.audio.currentTime)
+            this.playDurTime.textContent = this.getInTimeForm(this.audio.duration)
             if (this.isPlay) { this.renewTimeline() }
         } ,500)
     }
+
+    getInTimeForm(timeNum) {
+        let min = Math.trunc(timeNum / 60)
+        let sec = Math.trunc(timeNum % 60)
+        return this.getZero(min) + ':' + this.getZero(sec)
+    }
+
+    getZero = (num) => num > 9 ? '' + num : '0' + num
 
 
     //vol
@@ -146,9 +163,13 @@ export default class AudioPlayer {
         this.renewVol()
     }
 
-
     renewVol() {
         let pos = Math.trunc(this.audio.volume * 100)
         document.querySelector('.vol-line').style.setProperty('width', pos + '%');
+    }
+
+    //title
+    setSoundName(name) {
+        this.soundTittle.textContent = name
     }
 }

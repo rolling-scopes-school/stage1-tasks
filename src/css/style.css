@@ -40,7 +40,7 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 120px;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
 }
 
 .play-list {
@@ -295,8 +295,9 @@ body {
   width: 180px;
   border-radius: 3px;
   background-color: rgba(255, 255, 255, 0.5);
-  margin-bottom: 16px;
   z-index: 2;
+  margin-bottom: 2px;
+  cursor: pointer;
 }
 
 .all-time-line {
@@ -346,6 +347,7 @@ body {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 6px;
   z-index: 3;
+  cursor: pointer;
 }
 
 .vol-line {
@@ -354,4 +356,27 @@ body {
   width: 0%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 6px;
+}
+
+.play-title {
+  margin-bottom: 4px;
+  text-align: start;
+  font-size: 0.8rem;
+  opacity: .7;
+}
+
+.play-time {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.play-cur-time {
+  font-size: 0.8rem;
+  opacity: .6;
+}
+
+.play-dur-time {
+  font-size: 0.8rem;
+  opacity: .6;
 }

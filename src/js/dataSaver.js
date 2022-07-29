@@ -10,7 +10,8 @@ function setLocalStorage() {
     if (isLoaded) {
         window.localStorage.setItem('userName', document.querySelector("input.name").value)
         window.localStorage.setItem('city', document.querySelector("input.city").value)
-        //window.localStorage.setItem('langInApp', SettingsData.langInApp)
+        window.localStorage.setItem('langInApp', SettingsData.langInApp)
+        window.localStorage.setItem('vol', document.querySelector('audio').volume)
     }
 }
 
@@ -41,6 +42,19 @@ function getLocalStorage() {
     Weather.getWeather(document.querySelector("input.city").value, SettingsData.langInApp)
 
     QOfDay.lang = SettingsData.langInApp
+
+    //Volume
+    let vol = window.localStorage.getItem('vol')
+    vol = vol ? vol : 1
+    let audio = document.querySelector('audio')
+    audio.volume = vol
+    let pos = Math.trunc(vol * 100)
+    document.querySelector('.vol-line').style.setProperty('width', pos + '%');
+    console.log (vol)
+    console.log(audio.volume)
+    if(audio.volume == 0) { 
+        document.querySelector('.vol-mute').classList.add('mute-icon')
+    }
 
     isLoaded = true
 }
