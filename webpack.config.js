@@ -115,6 +115,15 @@ module.exports = {
                         presets: ['@babel/preset-env']
                     }
                 }
+            },
+            {
+                test: /\.po&/, 
+                use: {
+                    loader: "i18next-gettext-loader",
+                    options: {
+                        presets: ['@openculinary/i18next-gettext-loader']
+                    }
+                }
             }
         ]
     }

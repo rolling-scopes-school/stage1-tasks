@@ -1,4 +1,5 @@
 import getLang from './dataSaver'
+import i18next from './i18nextRes';
 
 export default class TimeDateAndHello {
 
@@ -7,35 +8,26 @@ export default class TimeDateAndHello {
     }
 
     showTime() {
-        const timeNode = document.querySelector('.time');
-        const dateNode = document.querySelector('.date');
+        const timeNode = document.querySelector('.time')
+        const dateNode = document.querySelector('.date')
         const date = new Date();
-        timeNode.textContent = date.toLocaleTimeString();
-        dateNode.textContent = date.toLocaleDateString(
-            'en-En', 
-            {weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC'}
-        );
-
-        let getTimeOfDayArrowFun = () => TimeDateAndHello.getTimeOfDay()
-        if (getLang() == 'en')  {
-            document.querySelector(".greeting").textContent = `Good ${getTimeOfDayArrowFun()}`
+        timeNode.textContent = date.toLocaleTimeString()
+        if(getLang() == 'en') {
+            dateNode.textContent = date.toLocaleDateString(
+                'en-En', 
+                {weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC'}
+            )
         } else {
-            switch (getTimeOfDayArrowFun()) {
-                case "night":
-                    document.querySelector(".greeting").textContent = "Доброй ночи,"
-                break
-                case "morning":
-                    document.querySelector(".greeting").textContent = "Доброе утро,"
-                break
-                case "afternoon":
-                    document.querySelector(".greeting").textContent = "Добрый день,"
-                break
-                default:
-                    document.querySelector(".greeting").textContent = "Добрый вечер,"
-            }
+            dateNode.textContent = date.toLocaleDateString(
+                'ru-Ru', 
+                {weekday: 'long', month: 'long', day: 'numeric', timeZone: 'UTC'}
+            )
         }
 
-        setTimeout(() => this.showTime(), 1000)
+        let getTimeOfDayArrowFun = () => TimeDateAndHello.getTimeOfDay()
+        document.querySelector(".greeting").textContent = i18next[getLang()][getTimeOfDayArrowFun()]
+
+        setTimeout( () => this.showTime(), 1000 )
     }
     
     static getTimeOfDay() {

@@ -8,7 +8,7 @@
 </head>
 <body>
   <header class="header">
-    <div class="player">
+    <div class="player transperent-block">
       <div class="player-controls">
         <button class="play-prev player-icon"></button>
         <button class="play player-icon"></button>
@@ -30,7 +30,7 @@
       </div>
       <ul class="play-list"></ul>
     </div>
-    <div class="weather">
+    <div class="weather transperent-block">
       <input type="text" class="city" />
       <i class="weather-icon owf"></i>
       <div class="weather-error"></div>
@@ -47,20 +47,78 @@
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
     </div>
-    <time class="time"></time>
-    <date class="date"></date>
-    <div class="greeting-container">
+    <time class="time transperent-block"></time>
+    <date class="date transperent-block"></date>
+    <div class="greeting-container transperent-block">
       <span class="greeting"></span>
       <input type="text" class="name">
     </div>
   </main>
   <footer class="footer">
-    <button class="change-quote"></button>
+    <button class="change-quote transperent-block"></button>
     <div>
-      <div class="quote"></div>
-      <div class="author"></div>
+      <div class="quote transperent-block"></div>
+      <div class="author transperent-block"></div>
     </div>
+    <div class="settings player-icon"></div>
   </footer>
+  <div class="pop-up display-none">
+    <div class="pop-up-back"></div>
+    <div class="pop-up-wrapper">
+      <h2 class="settings-title-up">Settings</h2>
+      <div class="window-settings">
+        <div class="settings-line">
+          <div class="lang-tittle settings-title">Select system language:</div>
+          <a class="lang-seted settings-seted">English</a>
+        </div>
+        <div class="settings-line">
+          <div class="img-tittle settings-title">Select images source:</div>
+          <a class="img-seted settings-seted">GitHub</a>
+        </div>
+        <div class="settings-line">
+          <div class="tag-tittle settings-title"></div>
+          <input class="tag-seted" type="text" placeholder="write a tag"></input>
+        </div>
+        <h3 class="visible-blocks">Visible blocks</h3>
+        <div class="settings-line">
+          <div class="b-time-tittle settings-title">Time:</div>
+          <a class="b-time-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-date-tittle settings-title">Date:</div>
+          <a class="b-date-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-hello-tittle settings-title">Greetings:</div>
+          <a class="b-hello-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-quote-tittle settings-title">Quote of the Day:</div>
+          <a class="b-quote-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-weather-tittle settings-title">Weather:</div>
+          <a class="b-weather-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-player-tittle settings-title">Player:</div>
+          <a class="b-player-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-todo-tittle settings-title">Todo list:</div>
+          <a class="b-todo-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-link-tittle settings-title">Link list:</div>
+          <a class="b-link-seted settings-seted">show</a>
+        </div>
+        <div class="settings-line">
+          <div class="b-contact-tittle settings-title">Contact list:</div>
+          <a class="b-contact-seted settings-seted">show</a>
+        </div>
+      </div>
+    </div>
+  </div>
   <audio></audio>
   <!--<script type="module" src="js/index.js"></script>-->
 </body>
