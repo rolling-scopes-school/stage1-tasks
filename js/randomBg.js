@@ -39,3 +39,7 @@ next.addEventListener("click", function() {
     randomNumber = randomNumber===20 ? 1 : randomNumber+1;
     setNewPath(randomNumber);
 })
+prev.addEventListener("click", function() {
+    randomNumber = randomNumber===1 ? 20 : randomNumber-1;
+    setNewPath(randomNumber);
+})
