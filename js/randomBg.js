@@ -41,7 +41,11 @@ function setNewPath(random) {
 }
 
 function changeBg(path) {
-    body.style.backgroundImage = `url("${path}")`;
+    const img = new Image();
+    img.src = path; 
+    img.addEventListener('load', () => {
+        body.style.backgroundImage = `url("${path}")`;
+    })        
 }
 
 function numToStr(number) {
