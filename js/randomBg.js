@@ -1,45 +1,64 @@
 const body = document.querySelector("body");
-let timeOfDay="";
-//При загрузке страницы проверяется время дня и формируется путь к файлу
-const currentDate = new Date();
-const currentHour = currentDate.getHours();
+const next = document.querySelector(".slide-next");
+const prev = document.querySelector(".slide-prev");
 const basePath = "https://raw.githubusercontent.com/ekatrif/momentum/assets/images/";
 const minNumber = 1;
 const maxNumber = 20;
-let randomNumber = random(minNumber,maxNumber);
-const next = document.querySelector(".slide-next");
-const prev = document.querySelector(".slide-prev");
 
-if (currentHour < 6) {
-    timeOfDay="night";
-} else if (currentHour < 12) {
-    timeOfDay="morning";
-} else if (currentHour<24) {
-    timeOfDay="afternoon";
+const timeOfDay = getTimeOfDay();
+
+const randomNumber = random(minNumber,maxNumber);
+let currentNumber = randomNumber;
+
+const path = setNewPath(randomNumber);
+
+changeBg(path);
+
+next.addEventListener("click", nextImage);
+
+prev.addEventListener("click", prevImage);
+
+function getTimeOfDay() {
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    if (currentHour < 6) {
+        return "night";
+    } else if (currentHour < 12) {
+        return "morning";
+    } else if (currentHour < 18) {
+        return "afternoon";
+    }
+    else {return "evening"};
 }
-else {timeOfDay="evening"};
-
-setNewPath(randomNumber);
 
 function random(min,max) {
     let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     return randomNum;
 }
+
 function setNewPath(random) {
-    let pathToImage = basePath + timeOfDay + "/" + numToStr(random) + ".jpg";
-    body.setAttribute("style", `background-image:url("${pathToImage}")`)
+    return basePath + timeOfDay + "/" + numToStr(random) + ".jpg";
 }
 
+function changeBg(path) {
+    body.style.backgroundImage = `url("${path}")`;
+}
 
 function numToStr(number) {
     return number < 10 ? `0${String(number)}` : String(number);
 }
 
-next.addEventListener("click", function() {
-    randomNumber = randomNumber===20 ? 1 : randomNumber+1;
-    setNewPath(randomNumber);
-})
-prev.addEventListener("click", function() {
-    randomNumber = randomNumber===1 ? 20 : randomNumber-1;
-    setNewPath(randomNumber);
-})
+function nextImage() {
+    currentNumber = currentNumber===20 ? 1 : currentNumber+1;    
+    //Когда загружена, сменить фон
+    let nextPath = setNewPath(currentNumber);
+    changeBg(nextPath);
+    
+}
+
+function prevImage() {
+    currentNumber = currentNumber===1 ? 20 : currentNumber-1;
+    //Когда загружена, сменить фон
+    let prevPath = setNewPath(currentNumber);
+    changeBg(prevPath);
+}
