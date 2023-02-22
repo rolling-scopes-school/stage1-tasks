@@ -25,23 +25,25 @@
     </div>
     <div class="weather" onclick="getWeather()" id="weather">
       <input type="text" class="city" placeholder="Minsk" id="cityinput"/>
-      <button type="submit" value="Click"  id="add" class="city_button">Click</button>
+
+      <button placeholder="Click" id="add" class="city_button" type="submit" value="Submit"></button>
+
       <i class="weather-icon owf-800">
       </i>
       <div class="weather-error"  id="cityoutput"></div>
       <div class="description-container" id="description">
         <span class="temperature" id="temp"></span>
-        <span class="weather-description" id="wind">clear scy</span>
+        <span class="weather-description">clear scy</span>
       </div>
       <div class="wind" id="wind">Wind speed: 3 m/s</div>
-      <div class="humidity" id="hum">Humidity: 43%</div>
+      <div class="humidity" id="humid">Humidity: 43%</div>
       <section class="display">
         <div class="wrapper">
             <h2 id="cityoutput"></h2>
             <p id="description"></p>
             <p id="temp"></p>
             <p id="wind"></p>
-            <p id="hum"></p>
+            <p id="humid"></p>
         </div>
       </section>
     </div>
