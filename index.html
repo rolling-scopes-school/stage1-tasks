@@ -23,17 +23,27 @@
         <li class="play-item">Summer Wind</li>
       </ul>
     </div>
-    <div class="weather">
-      <input type="text" class="city" placeholder="Minsk"/>
+    <div class="weather" onclick="getWeather()" id="weather">
+      <input type="text" class="city" placeholder="Minsk" id="cityinput"/>
+      <button type="submit" value="Click"  id="add" class="city_button">Click</button>
       <i class="weather-icon owf-800">
       </i>
-      <div class="weather-error"></div>
-      <div class="description-container">
-        <span class="temperature">17°C</span>
-        <span class="weather-description">clear scy</span>
+      <div class="weather-error"  id="cityoutput"></div>
+      <div class="description-container" id="description">
+        <span class="temperature" id="temp"></span>
+        <span class="weather-description" id="wind">clear scy</span>
       </div>
-      <div class="wind">Wind speed: 3</div>
-      <div class="humidity">Humidity: 43%</div>
+      <div class="wind" id="wind">Wind speed: 3 m/s</div>
+      <div class="humidity" id="hum">Humidity: 43%</div>
+      <section class="display">
+        <div class="wrapper">
+            <h2 id="cityoutput"></h2>
+            <p id="description"></p>
+            <p id="temp"></p>
+            <p id="wind"></p>
+            <p id="hum"></p>
+        </div>
+      </section>
     </div>
   </header>
   <main class="main">
@@ -44,15 +54,7 @@
     <time class="time" onclick="showTime()" id="time_for_now">
     </time>
 
-    <date class="date" onclick="showDate()" id="date_for_today">
-
-
-      <script type = "text/javascript">
-
-
-
-
-     </script></date>
+    <date class="date" onclick="showDate()" id="date_for_today"></date>
 
 
      <div class="greeting-container">
@@ -75,7 +77,7 @@
       <div class="author"></div>
     </div>
   </footer>
-  <script src="js/script.js"></script>
+  <script src="js/weather.js"></script>
   <script src="js/index.js"></script>
   <script src="/Users/katsiarynap/stage1-tasks/index.js"></script>
 </body>
