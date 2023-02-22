@@ -221,6 +221,7 @@ body {
   flex: 1;  
   padding: 10px;
   text-align: right;
+  margin-left: -200px;
 }
 
 .name {

@@ -16,18 +16,24 @@
         <button class="play player-icon"></button>
         <button class="play-next player-icon"></button>
       </div>
-      <ul class="play-list"></ul>
+      <ul class="play-list">
+        <li class="play-item">Aqua Caelestis</li>
+        <li class="play-item">Ennio Morricone</li>
+        <li class="play-item">River Flows In You</li>
+        <li class="play-item">Summer Wind</li>
+      </ul>
     </div>
     <div class="weather">
-      <input type="text" class="city" />
-      <i class="weather-icon owf"></i>
+      <input type="text" class="city" placeholder="Minsk"/>
+      <i class="weather-icon owf-800">
+      </i>
       <div class="weather-error"></div>
       <div class="description-container">
-        <span class="temperature"></span>
-        <span class="weather-description"></span>
+        <span class="temperature">17°C</span>
+        <span class="weather-description">clear scy</span>
       </div>
-      <div class="wind"></div>
-      <div class="humidity"></div>
+      <div class="wind">Wind speed: 3</div>
+      <div class="humidity">Humidity: 43%</div>
     </div>
   </header>
   <main class="main">
@@ -35,13 +41,31 @@
       <button class="slide-prev slider-icon"></button>
       <button class="slide-next slider-icon"></button>
     </div>
-    <time class="time" onclick="showTime()" id="time_for_now"></time>
+    <time class="time" onclick="showTime()" id="time_for_now">
+    </time>
 
-    <date class="date" onclick="showDate()" id="date_for_today"></date>
+    <date class="date" onclick="showDate()" id="date_for_today">
 
-    <div class="greeting-container">
-      <span class="greeting"></span>
-      <input type="text" class="name" />
+
+      <script type = "text/javascript">
+
+
+
+
+     </script></date>
+
+
+     <div class="greeting-container">
+      <span class="greeting">
+        <script>
+          var h=(new Date()).getHours();
+          if (h >= 06 && h < 12) document.writeln("Good morning!"); 
+          if (h >= 12 && h < 18) document.writeln("Good afternoon"); 
+          if (h >= 18 && h < 24) document. writeln("Good evening!"); 
+          if (h >= 00 || h < 06 ) document.wtriteln("Good night! " ) ; 
+        </script>
+      </span>
+      <input type="text" class="name" placeholder="[Enter your name]"/>
     </div>
   </main>
   <footer class="footer">

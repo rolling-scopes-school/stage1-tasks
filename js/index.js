@@ -6,8 +6,6 @@ function zero_first_format(value)
       }
       return value;
   }
-
-  /* функция получения текущей даты и времени */
   function showTime()
   {
       var current_datetime = new Date();
@@ -21,19 +19,30 @@ function zero_first_format(value)
   document.getElementById('time_for_now').innerHTML = showTime();
 
 
-  let today = new Date(),                                                               
-  yesterday = new Date(),                                                        
-  roomLastMessageDate = new Date(dateTime);                                                   
+  function showDate() {
+    var monthNames = [ "JANUARY", "FEBRUARY", "MARCH", "APRIL", "MAY", "JUNE",
+                   "JULY", "AUGUST", "SEPTEMBER", "OCTOBER", "NOVEMBER", "DECEMBER" ];
+    var days = ['SUNDAY','MONDAY','TUESDAY','WEDNESDAY','THURSDAY','FRIDAY','SATURDAY'];                       
+    var today = new Date();
+    var dd   = today.getDate();
+    var mm   = monthNames[today.getMonth()]; 
+    var yyyy = today.getFullYear();
+    var day  = days[today.getDay()];
+    today = 'Date is :' + dd + '-' + mm + '-' + yyyy;
+    document.write(today +"<br>");
+    document.write('Day is : ' + day );
 
-yesterday.setDate(today.getDate() -1);
-
-if (dateTime) {
-  if (getFormattedDate(today === roomLastMessageDate)) {                                                                
-      return 'Сегодня'                                                                                
-  } else if (getFormattedDate(yesterday === roomLastMessageDate)) {                                                     
-      return 'Вчера'                                                                                  
-  } else {                                                                                            
-      return roomLastMessageDate;                                                                     
+    return day + ', ' + mm + '  ' + dd + ',' + yyyy;
   }
-}
+
+  document.getElementById('date_for_today').innerHTML = showDate();
+
+
+
+
+
+
+
+
+
   
