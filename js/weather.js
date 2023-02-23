@@ -23,12 +23,13 @@ async function getWeather() {
 
 
 
-  var inputval = document.querySelector('#cityinput')
+  var inputval = document.querySelector('#cityinput');
   var btn = document.querySelector('#add');
-  var city = document.querySelector('#cityoutput')
-  var descrip = document.querySelector('#description')
-  var temp = document.querySelector('#temp')
-  var wind = document.querySelector('#wind')
+  var city = document.querySelector('#cityoutput');
+  var descrip = document.querySelector('#description');
+  var temp = document.querySelector('#temp');
+  var wind = document.querySelector('#wind');
+  var hum = document.querySelector('#humid');
   
   
   apik = "3045dd712ffe6e702e3245525ac7fa38"
@@ -53,10 +54,12 @@ async function getWeather() {
               var wndspd = data['wind']['speed'];
 
 
+
               city.innerHTML=`Weather of <span>${nameval}<span>`
               temp.innerHTML = `Temperature: <span>${ convertion(tempature)} °C</span>`
               description.innerHTML = `Sky Conditions: <span>${descrip}<span>`
               wind.innerHTML = `Wind Speed: <span>${wndspd} km/h<span>`
+
 
   
           })

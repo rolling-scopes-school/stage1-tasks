@@ -26,7 +26,7 @@
     <div class="weather" onclick="getWeather()" id="weather">
       <input type="text" class="city" placeholder="Minsk" id="cityinput"/>
 
-      <button placeholder="Click" id="add" class="city_button" type="submit" value="Submit"></button>
+      <button placeholder="Click" id="add" class="city_button" type="submit" value="Submit">Click</button>
 
       <i class="weather-icon owf-800">
       </i>
@@ -35,14 +35,12 @@
         <span class="temperature" id="temp"></span>
         <span class="weather-description">clear scy</span>
       </div>
-      <div class="wind" id="wind">Wind speed: 3 m/s</div>
+      <div class="wind" id="wind"></div>
       <div class="humidity" id="humid">Humidity: 43%</div>
       <section class="display">
         <div class="wrapper">
             <h2 id="cityoutput"></h2>
             <p id="description"></p>
-            <p id="temp"></p>
-            <p id="wind"></p>
             <p id="humid"></p>
         </div>
       </section>
@@ -66,7 +64,7 @@
           if (h >= 06 && h < 12) document.writeln("Good morning!"); 
           if (h >= 12 && h < 18) document.writeln("Good afternoon"); 
           if (h >= 18 && h < 24) document. writeln("Good evening!"); 
-          if (h >= 00 || h < 06 ) document.wtriteln("Good night! " ) ; 
+          if (h >= 00 && h < 06 ) document.wtriteln("Good night! " ); 
         </script>
       </span>
       <input type="text" class="name" placeholder="[Enter your name]"/>
