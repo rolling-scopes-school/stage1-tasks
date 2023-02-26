@@ -16,7 +16,7 @@ body {
   font-size: 16px;
   color: #fff;
   text-align: center;
-  background: url("../assets/img/bg.jpg") center/cover, rgba(0, 0, 0, 0.5);
+  background: url() center/cover, rgba(0, 0, 0, 0.5);
   background-blend-mode: multiply;
   transition: background-image 1s ease-in-out;
 }
@@ -217,6 +217,10 @@ body {
   font-size: 40px;
 }
 
+.form {
+  margin: 0 auto;
+}
+
 .greeting {
   flex: 1;  
   padding: 10px;
@@ -258,10 +262,12 @@ body {
 
 .quote {
   min-height: 32px;
+  font-size: 20px;
 }
 
 .author {
   min-height: 20px;
+  font-size: 20px;
 }
 
 @media (max-width: 768px) {
@@ -283,4 +289,24 @@ body {
     font-size: 32px;
     padding: 5px;
   }
+}
+
+.content-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /*max-width: 100%;*/
+  width: 50%;
+  margin-top: 40px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.link-github {
+  text-decoration: none;
+  color:#fff;
+}
+
+.course {
+  background-color:#fff;
 }
