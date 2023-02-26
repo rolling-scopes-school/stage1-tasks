@@ -65,3 +65,6 @@ async function getWeather() {
           })
           .catch(err => alert('You entered Wrong city name'))
       })
+
+
+

@@ -36,17 +36,56 @@ function zero_first_format(value)
   }
 
   document.getElementById('date_for_today').innerHTML = showDate();
-
-
-
   
 
+  //music audio//
 
+  var playMusic = document.getElementById('playMusic');
+  var audio = document.getElementById('audio');
+  playMusic.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+      playMusic.classList.remove('pause');
+    } else {
+      audio.pause();
+      playMusic.classList.add('pause');
+    }
+  });
 
+  var next = document.getElementById('next')
+  var prev = document.getElementById('prev')
+  next.addEventListener('click', function() {
+    for(let i = 0; i < playList.length; i++) {
+      if(i === playList.length - 1) {
+        currentSong = playList[0];
+    }
+  }
+  })
 
+  prev.addEventListener('click', function() {
+    for(let i = 0; i < playList.length; i++) {
+      // здесь ваш код
+    }
+  })
 
-
-
-
-
+  var next = document.getElementById('next');
+/* var prev = document.getElementById('prev') */
+  var prev = document.getElementById('prev');
+/* next.addEventListener('click', function() { */
+  next.addEventListener('click', function() {
   
+/* for(let i = 0; i < playList.length; i++) { */
+  for(let i = 0; i < playList.length; i++) {
+/* here to write the code */
+  if(playList[i].id === currentSong.id) {
+    if(i === playList.length - 1) {
+      currentSong = playList[0];
+    } else {
+      currentSong = playList[i + 1];
+    }
+    break;
+  }
+/* } */
+}
+/* }) */
+})

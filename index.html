@@ -9,18 +9,29 @@
   <title>momentum</title>
 </head>
 <body>
+  <img id="image" src="" onClick="imgsrc();">
+
   <header class="header">
     <div class="player">
-      <div class="player-controls">
-        <button class="play-prev player-icon"></button>
-        <button class="play player-icon"></button>
-        <button class="play-next player-icon"></button>
+      <div class="player-controls" onclick="playAudio()">
+        <button class="play-prev player-icon" id="prev"></button>
+        <button class="play player-icon" id="playMusic"></button>
+        <button class="play-next player-icon" id="next" ></button>
+     
       </div>
       <ul class="play-list">
-        <li class="play-item">Aqua Caelestis</li>
-        <li class="play-item">Ennio Morricone</li>
-        <li class="play-item">River Flows In You</li>
-        <li class="play-item">Summer Wind</li>
+        <li class="play-item">
+          <audio src="assets/sounds/Aqua Caelestis.mp3" controls id="audio"></audio>
+          Aqua Caelestis</li> 
+        <li class="play-item">
+          <audio src="assets/sounds/Ennio Morricone.mp3" controls id="audio"></audio>
+          Ennio Morricone</li>
+        <li class="play-item">
+          <audio src="assets/sounds/River Flows In You.mp3" controls id="audio"></audio>
+          River Flows In You</li>
+        <li class="play-item">
+          <audio src="assets/sounds/Summer Wind.mp3" controls id="audio"></audio>
+          Summer Wind</li>
       </ul>
     </div>
     <div class="weather" onclick="getWeather()" id="weather">
@@ -80,5 +91,7 @@
   <script src="js/weather.js"></script>
   <script src="js/index.js"></script>
   <script src="/Users/katsiarynap/stage1-tasks/index.js"></script>
+  <script src="js/images.js"></script>
+  <script src="js/music.js"></script>
 </body>
 </html>
