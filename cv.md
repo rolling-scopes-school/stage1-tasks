@@ -27,7 +27,7 @@ I believe, that my ability to learn and to gain new skills will lead me through 
 * __Git, GitHub__ _(in progress)_
 * __Windows OS__
 * __Figma(for web development)__
-* __Editors: VSCode, Sublime __
+* __Editors: VSCode, Sublime__
 
 ## Code example:
 ```
